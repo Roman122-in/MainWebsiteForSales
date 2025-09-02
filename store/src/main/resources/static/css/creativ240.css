@@ -1,0 +1,285 @@
+/* --- Creative Design Palette & Settings --- */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --primary-accent: #A020F0; /* Яркий фиолетовый */
+    --bg-dark: #121212; /* Глубокий темный фон */
+    --bg-light: #1a1a1a; /* Чуть светлее фон для карточек */
+    --text-light: #EAEAEA;
+    --text-muted: #A0A0A0;
+    --white: #FFFFFF;
+    --border-color: #333333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Header --- */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 0;
+    background-color: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-light);
+}
+.nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: color 0.4s;
+}
+.nav a:hover {
+    color: var(--text-light);
+}
+
+/* --- General Styles --- */
+.section {
+    padding: 6rem 0;
+    position: relative;
+}
+.section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 0 4rem 0;
+}
+.text-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.btn {
+    display: inline-block;
+    background: var(--accent-gradient);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 20px rgba(255, 20, 147, 0.3);
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding: 7rem 0;
+}
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 2rem;
+}
+.hero-content h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    line-height: 1.1;
+    margin: 0;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 450px;
+    margin: 1.5rem 0 2.5rem 0;
+}
+.hero-visual {
+    position: relative;
+    height: 300px;
+}
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    filter: blur(50px);
+}
+.shape-1 {
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 20%;
+    opacity: 0.5;
+}
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+/* --- Angled Section Divider --- */
+.bento-section {
+    background-color: var(--background-card);
+    transform: skewY(-3deg);
+    margin: 4rem 0;
+}
+.bento-section > .container {
+    transform: skewY(3deg);
+}
+
+/* --- Bento Grid --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    gap: 1.5rem;
+}
+.bento-item {
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: transform 0.4s;
+}
+.bento-item:hover {
+    transform: scale(1.03);
+}
+.bento-item h3 { font-family: 'Syne', sans-serif; }
+.bento-item.item-large { grid-column: span 2; }
+.bento-item.item-medium { grid-row: span 2; display: flex; flex-direction: column; justify-content: center; }
+
+/* --- Process Section --- */
+.process-steps {
+    display: grid;
+    gap: 2rem;
+}
+.process-step {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-card);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+.step-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    margin-right: 2rem;
+    color: transparent;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: var(--text-secondary);
+}
+.step-content p { color: var(--text-secondary); }
+
+/* --- CTA Section --- */
+.cta-section {
+    text-align: center;
+    background: var(--accent-gradient);
+    margin: 4rem 0;
+    padding: 5rem 0;
+    border-radius: 20px;
+}
+.cta-section h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; }
+.cta-section p { max-width: 500px; margin: 1rem auto 2rem auto; }
+.cta-section .btn {
+    background: #fff;
+    color: #121212;
+    box-shadow: none;
+}
+
+/* --- Footer --- */
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-content p { margin: 1.5rem auto 2.5rem auto; }
+    .hero-visual { display: none; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-item.item-large, .bento-item.item-medium { grid-column: auto; grid-row: auto; }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 0; /* ДОБАВЛЕНО: Уменьшаем отступы секций */
+    }
+    .section-title { font-size: 2.5rem; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .nav { display: none; }
+
+    /* ДОБАВЛЕНО: Убираем наклон секции на мобильных */
+    .bento-section {
+        transform: none;
+        margin: 0;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+    .bento-section > .container {
+        transform: none;
+    }
+
+    /* ДОБАВЛЕНО: Адаптируем блок "Процесс" */
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    /* ДОБАВЛЕНО: Уменьшаем отступы в CTA секции */
+    .cta-section {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem; /* ДОБАВЛЕНО: Уменьшаем боковые отступы */
+    }
+    .section-title {
+        font-size: 2rem; /* ДОБАВЛЕНО: Уменьшаем заголовки */
+    }
+    .hero-content h1 {
+        font-size: 2.8rem; /* ДОБАВЛЕНО: Уменьшаем главный заголовок */
+    }
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+}

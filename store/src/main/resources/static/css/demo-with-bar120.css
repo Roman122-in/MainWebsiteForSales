@@ -1,0 +1,390 @@
+:root {
+    /* Klare, minimalistische Farbpalette */
+    --primary-color: #20c997; /* Ein sanftes Blaugrün als Akzent */
+    --text-color: #212529; /* Dunkelgrau statt hartem Schwarz */
+    --text-color-light: #6c757d; /* Helleres Grau für Untertitel */
+    --background-color: #ffffff;
+    --section-background: #f8f9fa; /* Sehr helles Grau für Abwechslung */
+    --border-color: #dee2e6;
+
+    /* Moderne, serifenlose Schriftarten */
+    --font-family-heading: 'Montserrat', sans-serif;
+    --font-family-body: 'Inter', sans-serif;
+
+    --container-width: 1100px;
+    --border-radius: 6px;
+    --transition-speed: 0.2s;
+}
+
+/* --- Globale Stile --- */
+body {
+    margin: 0;
+    font-family: var(--font-family-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-family: var(--font-family-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+
+/* --- Header --- */
+.header {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.nav a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    margin-left: 1.5rem;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section (Visitenkarte) --- */
+.hero {
+    padding: 5rem 0;
+    background-color: var(--background-color);
+}
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+.hero-subtitle {
+    display: block;
+    font-family: var(--font-family-heading);
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.hero-content h1 {
+    font-family: var(--font-family-heading);
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0 0 1.5rem 0;
+}
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+.hero-image {
+    position: relative; /* Необходимо для позиционирования подписи */
+}
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    display: block;
+}
+
+/* --- Allgemeiner Button-Stil --- */
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    border: 1px solid var(--primary-color);
+}
+.button:hover {
+    background-color: #1baa80;
+    transform: translateY(-2px);
+}
+
+/* --- Features Section --- */
+.section-features {
+    background-color: var(--section-background);
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.feature-card {
+    background-color: #fff;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: border-color var(--transition-speed), transform var(--transition-speed);
+}
+.feature-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+.feature-card h3 {
+    font-family: var(--font-family-heading);
+    margin-bottom: 0.5rem;
+}
+
+/* --- About Section --- */
+#ueber-uns {
+    background-color: var(--section-background); /* Для чередования фона */
+}
+.about-container {
+    max-width: 750px;
+    text-align: center;
+}
+.about-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* --- Contact Section --- */
+.section-contact {
+    background-color: var(--text-color);
+    color: white;
+}
+.section-contact .section-title {
+    color: white;
+}
+.contact-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: -1rem auto 2.5rem auto;
+}
+.section-contact .button {
+    background-color: var(--primary-color);
+}
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-image { grid-row: 1; margin-bottom: 2rem; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .hero-content p { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 768px) {
+    .section { padding: 4rem 0; }
+    .section-title { font-size: 1.8rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .features-grid { grid-template-columns: 1fr; }
+    .nav { display: none; }
+}
+
+/* --- НОВЫЕ СТИЛИ --- */
+
+/* 1. Информационный блок */
+.demo-notice {
+    background-color: #e7f5ff;
+    border-bottom: 1px solid #bce0ff;
+    padding: 1rem 0;
+    text-align: center;
+}
+.demo-notice .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.demo-notice .bi {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #0d6efd;
+}
+.demo-notice p {
+    margin: 0;
+    color: #0a58ca;
+}
+
+/* 2. Подпись на фото */
+.image-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* 3. Раздел "Как это работает" */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* 4. Раздел "Цены" */
+.pricing-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.price {
+    font-size: 2.5rem;
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.price-unit {
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+.pricing-features li {
+    margin-bottom: 0.5rem;
+}
+.pricing-note {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+}
+
+/* 5. Раздел "Отзывы" */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.testimonial-card {
+    background-color: var(--section-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+.testimonial-card blockquote {
+    margin: 0;
+    font-style: italic;
+}
+.testimonial-card cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* 6. "Липкая" панель с кнопкой */
+.sticky-cta-bar {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+.cta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cta-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #1baa80;
+}
+
+/* Дополнительные правки для мобильных устройств */
+@media (max-width: 768px) {
+    .process-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-text {
+        display: none; /* Скрываем текст на мобильных */
+    }
+    .cta-container {
+        justify-content: center; /* Центрируем кнопку */
+    }
+}

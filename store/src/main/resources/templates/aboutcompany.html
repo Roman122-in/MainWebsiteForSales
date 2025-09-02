@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsere Geschichte | Jtutor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #36322D;
+            --secondary-text-color: #7A7A7A;
+            --border-color: #DCD9D3;
+            --accent-color: #007BFF;
+            --font-serif: 'Lora', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .home-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .home-btn svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        .lang-switcher a {
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            padding: 5px 8px;
+            margin-left: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .content h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content .signature {
+            font-style: italic;
+            color: var(--secondary-text-color);
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                padding: 1rem;
+            }
+            .content h1 {
+                font-size: 2rem;
+            }
+            .content p {
+                font-size: 1rem;
+            }
+            .home-btn span {
+                display: none; /* Скрываем текст "Home" на маленьких экранах */
+            }
+        }
+</style>
+</head>
+<body>
+
+<div class="page-container">
+    <header class="page-header">
+        <a href="/" class="home-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+            <span data-translate-key="home_button">Startseite</span>
+        </a>
+        <div class="lang-switcher">
+            <a href="#" data-lang="de" class="active">DE</a>
+            <a href="#" data-lang="en">EN</a>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 data-translate-key="title">Unsere Geschichte: Von Charkiw nach Deutschland</h1>
+        <p data-translate-key="p1">
+            Unsere Reise begann nicht in einem Konferenzraum, sondern an den Schreibtischen des Polytechnischen Instituts in Charkiw, einer der führenden technischen Universitäten der Ukraine. Dort haben wir, die Gründer von Jtutor, unsere Fähigkeiten in der Softwareentwicklung und im Design verfeinert, angetrieben von einer gemeinsamen Leidenschaft für Technologie und Bildung.
+        </p>
+        <p data-translate-key="p2">
+            Der Krieg in unserer Heimat zwang uns, ein neues Kapitel aufzuschlagen. Wir fanden in Deutschland Sicherheit und eine neue Gemeinschaft, die uns mit offenen Armen empfing. Aus Dankbarkeit und dem Wunsch heraus, etwas zurückzugeben, entstand die Idee für Jtutor. Wir wollten nicht nur ankommen, sondern auch einen aktiven Beitrag zur deutschen Gesellschaft leisten.
+        </p>
+        <p data-translate-key="p3">
+            Wir sahen, wie viele talentierte Lehrer und Tutoren Schwierigkeiten hatten, im digitalen Raum Fuß zu fassen. Mit unserem technischen Wissen wollten wir eine Brücke schlagen. Jtutor wurde gegründet, um Pädagogen professionelle, aber unkomplizierte Werkzeuge an die Hand zu geben, damit sie ihre Reichweite vergrößern und sich auf das konzentrieren können, was sie am besten können: unterrichten.
+        </p>
+        <p data-translate-key="p4">
+            Wir verkaufen nicht nur Websites; wir bieten eine Partnerschaft an. Wir verstehen, dass hinter jedem Lehrer eine Mission steht, und wir sind stolz darauf, diese Mission mit unseren digitalen Lösungen zu unterstützen. Mit jedem Projekt, das wir umsetzen, bauen wir nicht nur eine Website, sondern auch eine Brücke zwischen unseren Kulturen.
+        </p>
+        <p class="signature" data-translate-key="signature">
+            Mit freundlichen Grüßen, Ihr Jtutor-Team
+        </p>
+    </main>
+</div>
+
+<script>
+    const translations = {
+        "de": {
+            "home_button": "Startseite",
+            "title": "Unsere Geschichte: Von Charkiw nach Deutschland",
+            "p1": "Unsere Reise begann nicht in einem Konferenzraum, sondern an den Schreibtischen des Polytechnischen Instituts in Charkiw, einer der führenden technischen Universitäten der Ukraine. Dort haben wir, die Gründer von Jtutor, unsere Fähigkeiten in der Softwareentwicklung und im Design verfeinert, angetrieben von einer gemeinsamen Leidenschaft für Technologie und Bildung.",
+            "p2": "Der Krieg in unserer Heimat zwang uns, ein neues Kapitel aufzuschlagen. Wir fanden in Deutschland Sicherheit und eine neue Gemeinschaft, die uns mit offenen Armen empfing. Aus Dankbarkeit und dem Wunsch heraus, etwas zurückzugeben, entstand die Idee für Jtutor. Wir wollten nicht nur ankommen, sondern auch einen aktiven Beitrag zur deutschen Gesellschaft leisten.",
+            "p3": "Wir sahen, wie viele talentierte Lehrer und Tutoren Schwierigkeiten hatten, im digitalen Raum Fuß zu fassen. Mit unserem technischen Wissen wollten wir eine Brücke schlagen. Jtutor wurde gegründet, um Pädagogen professionelle, aber unkomplizierte Werkzeuge an die Hand zu geben, damit sie ihre Reichweite vergrößern und sich auf das konzentrieren können, was sie am besten können: unterrichten.",
+            "p4": "Wir verkaufen nicht nur Websites; wir bieten eine Partnerschaft an. Wir verstehen, dass hinter jedem Lehrer eine Mission steht, und wir sind stolz darauf, diese Mission mit unseren digitalen Lösungen zu unterstützen. Mit jedem Projekt, das wir umsetzen, bauen wir nicht nur eine Website, sondern auch eine Brücke zwischen unseren Kulturen.",
+            "signature": "Mit freundlichen Grüßen, Ihr Jtutor-Team"
+        },
+        "en": {
+            "home_button": "Home",
+            "title": "Our Story: From Kharkiv to Germany",
+            "p1": "Our journey didn't start in a conference room, but at the desks of the Kharkiv Polytechnic Institute, one of Ukraine's leading technical universities. There, we, the founders of Jtutor, refined our skills in software development and design, driven by a shared passion for technology and education.",
+            "p2": "The war in our homeland forced us to open a new chapter. We found safety in Germany and a new community that welcomed us with open arms. Out of gratitude and a desire to give something back, the idea for Jtutor was born. We didn't just want to arrive; we wanted to make an active contribution to German society.",
+            "p3": "We saw how many talented teachers and tutors struggled to gain a foothold in the digital space. With our technical knowledge, we wanted to build a bridge. Jtutor was founded to provide educators with professional yet straightforward tools to expand their reach and focus on what they do best: teaching.",
+            "p4": "We don't just sell websites; we offer a partnership. We understand that behind every teacher is a mission, and we are proud to support that mission with our digital solutions. With every project we implement, we are not only building a website but also a bridge between our cultures.",
+            "signature": "Sincerely, Your Jtutor Team"
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const langButtons = document.querySelectorAll('.lang-switcher a');
+        const translatableElements = document.querySelectorAll('[data-translate-key]');
+
+        const translatePage = (lang) => {
+            translatableElements.forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Обновляем активную кнопку
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        };
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = e.target.getAttribute('data-lang');
+                translatePage(lang);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

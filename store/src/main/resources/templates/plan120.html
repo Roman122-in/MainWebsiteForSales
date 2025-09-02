@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragebogen: Visitenkarten-Website</title>
+    <link rel="stylesheet" href="/css/plan120.css">
+
+    <style>
+        .page-header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 900px; /* Ширина соответствует контейнеру + отступы */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .home-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            border: 1px solid #dee2e6;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .home-btn:hover {
+            transform: translateY(-2px);
+        }
+        .home-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #6c757d;
+        }
+
+        .lang-switcher {
+            position: static;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <a href="/" class="home-btn" title="Zur Startseite">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+    </a>
+    <div class="lang-switcher">
+        <a href="#" data-lang="de">DE</a>
+        <a href="#" data-lang="en">EN</a>
+    </div>
+</div>
+
+
+<div class="container">
+    <h1 data-translate-key="plan120.main.header"></h1>
+    <p class="subtitle" data-translate-key="plan120.main.subtitle"></p>
+
+    <div class="disclaimer-box">
+        <div class="icon">ℹ️</div>
+        <p data-translate-key="disclaimer.text"></p>
+    </div>
+
+    <form id="websiteForm">
+        <div class="form-section">
+            <div class="form-group">
+                <label for="about" data-translate-key="form.label.about"></label>
+                <textarea id="about" name="about" rows="4" data-translate-key-placeholder="form.placeholder.about" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email" data-translate-key="form.label.email"></label>
+                <input type="email" id="email" name="email" data-translate-key-placeholder="form.placeholder.email" required>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-group">
+                <label for="targetAudience" data-translate-key="form.label.audience"></label>
+                <input type="text" id="targetAudience" name="targetAudience" data-translate-key-placeholder="form.placeholder.audience" required>
+            </div>
+            <div class="form-group">
+                <label for="websiteGoal" data-translate-key="form.label.goal"></label>
+                <input type="text" id="websiteGoal" name="websiteGoal" data-translate-key-placeholder="form.placeholder.goal" required>
+            </div>
+            <div class="form-group">
+                <label data-translate-key="form.label.features"></label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="features" value="contact_form"> <span data-translate-key="form.feature.contact"></span></label>
+                    <label><input type="checkbox" name="features" value="gallery"> <span data-translate-key="form.feature.gallery"></span></label>
+                    <label><input type="checkbox" name="features" value="blog"> <span data-translate-key="form.feature.blog"></span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3 data-translate-key="form.header.template"></h3>
+            <div class="template-selector">
+                <div class="template-option" data-template="minimalism">
+                    <p data-translate-key="template.minimalism"></p>
+                </div>
+                <div class="template-option" data-template="corporate">
+                    <p data-translate-key="template.corporate"></p>
+                </div>
+                <div class="template-option" data-template="creative">
+                    <p data-translate-key="template.creative"></p>
+                </div>
+            </div>
+            <input type="hidden" id="selectedTemplate" name="template" required>
+        </div>
+
+        <div id="preview-section" class="preview-section" style="display: none;">
+            <div class="preview-header">
+                <h2 data-translate-key="preview.header"></h2>
+                <button type="button" id="expand-preview-btn" data-translate-key="preview.button.expand"></button>
+            </div>
+            <iframe id="websitePreview" src="" frameborder="0"></iframe>
+            <div class="customization-options">
+                <div class="form-group">
+                    <label for="previewTitle" data-translate-key="preview.label.title"></label>
+                    <input type="text" id="previewTitle" data-translate-key-placeholder="preview.placeholder.title">
+                </div>
+                <div class="form-group">
+                    <label for="backgroundColor" data-translate-key="preview.label.bgColor"></label>
+                    <input type="color" id="backgroundColor" value="#ffffff">
+                </div>
+                <div class="form-group">
+                    <label for="textColor" data-translate-key="preview.label.textColor"></label>
+                    <input type="color" id="textColor" value="#333333">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="submit-btn" data-translate-key="form.button.submit"></button>
+    </form>
+</div>
+
+<script src="/js/plan120.js"></script>
+<button type="button" id="close-fullscreen-btn" data-translate-key="preview.button.close" style="display: none;"></button>
+
+<div id="success-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <div class="success-animation">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+        <h2 data-translate-key="success.message"></h2>
+    </div>
+</div>
+
+</body>
+</html>

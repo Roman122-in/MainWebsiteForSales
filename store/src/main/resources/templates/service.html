@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="page_title">Impressum & Datenschutz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+     --bg-color: #FFFFFF;
+     --text-color: #36322D;
+     --secondary-text-color: #7A7A7A;
+     --border-color: #DCD9D3;
+     --accent-color: #007BFF;
+     --font-serif: 'Lora', serif;
+     --font-sans: 'Inter', sans-serif;
+ }
+
+ body {
+     font-family: var(--font-sans);
+     background-color: var(--bg-color);
+     color: var(--text-color);
+     line-height: 1.8;
+     margin: 0;
+     padding: 0;
+     -webkit-font-smoothing: antialiased;
+ }
+
+ .page-container {
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 2rem;
+ }
+
+ .page-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-bottom: 1.5rem;
+     margin-bottom: 2rem;
+     border-bottom: 1px solid var(--border-color);
+ }
+
+ .home-btn {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     color: var(--text-color);
+     font-weight: 600;
+ }
+
+ .home-btn svg {
+     width: 24px;
+     height: 24px;
+     margin-right: 8px;
+     fill: currentColor;
+ }
+
+ .home-btn:hover {
+     color: var(--accent-color);
+ }
+
+ .lang-switcher a {
+     font-weight: 600;
+     text-decoration: none;
+     color: var(--secondary-text-color);
+     padding: 5px 8px;
+     margin-left: 5px;
+     border-radius: 4px;
+     transition: background-color 0.2s, color 0.2s;
+ }
+
+ .lang-switcher a.active,
+ .lang-switcher a:hover {
+     background-color: var(--accent-color);
+     color: white;
+ }
+
+ .content h1, .content h2, .content h3 {
+     font-family: var(--font-serif);
+     color: #000;
+ }
+
+ .content h1 {
+     font-size: 2.8rem;
+     line-height: 1.2;
+     margin-bottom: 2rem;
+     /* border-bottom: 1px solid var(--border-color);  <-- Эта линия удалена */
+     /* padding-bottom: 1rem; <-- И связанный с ней отступ тоже */
+ }
+
+ .content h2 {
+     font-size: 2rem;
+     margin-top: 3rem;
+     margin-bottom: 1.5rem;
+ }
+
+ .content h3 {
+     font-size: 1.3rem;
+     margin-top: 2rem;
+     margin-bottom: 1rem;
+ }
+
+ .content p {
+     font-size: 1rem;
+     margin-bottom: 1rem;
+ }
+
+ .content a {
+     color: var(--accent-color);
+ }
+
+ @media (max-width: 600px) {
+     .page-container {
+         padding: 1rem;
+     }
+     .content h1 {
+         font-size: 2rem;
+     }
+     .home-btn span {
+         display: none;
+     }
+ }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+    <header class="page-header">
+        <a href="/" class="home-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+            <span data-translate-key="home_button">Startseite</span>
+        </a>
+        <div class="lang-switcher">
+            <a href="#" data-lang="de" class="active">DE</a>
+            <a href="#" data-lang="en">EN</a>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 data-translate-key="main_title">Impressum & Datenschutz</h1>
+
+        <section id="impressum">
+            <h2 data-translate-key="impressum_title">Impressum</h2>
+
+            <h3 data-translate-key="impressum_s1_title">Angaben zum Projekt</h3>
+            <p data-translate-key="impressum_s1_text">
+                Jtutor (Projekt im Aufbau)<br>
+                Projektinhaber: Vasyl Cavcavadze
+            </p>
+
+            <h3 data-translate-key="impressum_s2_title">Kontakt</h3>
+            <p>
+                E-Mail: tutorsrvc@gmail.com
+            </p>
+
+            <p data-translate-key="impressum_s2_text">
+                <strong>Hinweis:</strong> Dieses Webprojekt befindet sich derzeit in der Gründungsphase. Ein vollständiges Impressum mit Geschäftsanschrift und Steuernummer wird nach der offiziellen Gewerbeanmeldung umgehend nachgetragen.
+            </p>
+        </section>
+
+        <section id="datenschutz">
+            <h2 data-translate-key="privacy_title">Datenschutzerklärung</h2>
+            <p data-translate-key="privacy_s1_text">
+                Der Schutz Ihrer persönlichen Daten ist uns wichtig. Nachfolgend informieren wir Sie über die Verarbeitung personenbezogener Daten im Rahmen der Nutzung unserer Webseite.
+            </p>
+            <p data-translate-key="privacy_s2_text">
+                <strong>Verantwortliche Stelle:</strong> Der für die Verarbeitung von personenbezogenen Daten Verantwortliche ist der oben genannte Projektinhaber.
+            </p>
+            <p data-translate-key="privacy_s3_text">
+                <strong>Server-Log-Dateien:</strong> Bei jedem Aufruf unserer Webseite erfasst unser System automatisiert Daten vom Computersystem des aufrufenden Rechners (z.B. IP-Adresse, Datum, Uhrzeit). Diese Daten sind technisch erforderlich und werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeitet.
+            </p>
+            <p data-translate-key="privacy_s4_text">
+                <strong>Kontaktaufnahme per E-Mail:</strong> Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten zur Bearbeitung Ihrer Anfrage gespeichert. Grundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO.
+            </p>
+            <p data-translate-key="privacy_s5_text">
+                <strong>Ihre Rechte:</strong> Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten.
+            </p>
+        </section>
+    </main>
+</div>
+
+<script src="/js/service.js"></script>
+</body>
+</html>

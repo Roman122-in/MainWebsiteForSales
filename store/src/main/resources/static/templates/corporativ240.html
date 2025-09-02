@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jtutor Solutions - Kreative Lernkonzepte</title>
+    <link rel="stylesheet" href="/css/corporativ240.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="background-canvas"></div>
+
+<div class="page-content">
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Jtutor</a>
+            <nav class="nav">
+                <a href="#">Konzepte</a>
+                <a href="#">Methodik</a>
+                <a href="#">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Lernen Neu Gedacht.</h1>
+                <p>Wir gestalten einzigartige Online-Erlebnisse für Tutoren, die mehr wollen als nur eine Webseite.</p>
+                <a href="#" class="btn btn-primary">Projekt starten</a>
+            </div>
+        </section>
+
+        <section class="section features-section">
+            <div class="container">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-title">
+                            <span class="feature-number">01</span>
+                            <h3>Individuelles Design</h3>
+                        </div>
+                        <div class="feature-description">
+                            <p>Keine Vorlagen. Jede Webseite ist ein handgefertigtes Unikat, das Ihre persönliche Lehrmethode und Ihren Stil widerspiegelt.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-title">
+                            <span class="feature-number">02</span>
+                            <h3>Interaktive Elemente</h3>
+                        </div>
+                        <div class="feature-description">
+                            <p>Wir integrieren moderne Tools, von Online-Kalendern bis hin zu interaktiven Quizzen, um Ihre Schüler zu begeistern.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-title">
+                            <span class="feature-number">03</span>
+                            <h3>Volle Kontrolle</h3>
+                        </div>
+                        <div class="feature-description">
+                            <p>Mit Ihrem persönlichen Dashboard verwalten Sie Inhalte, Termine und Kommunikation mühelos und effizient.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section content-section">
+            <div class="container content-split">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=800&auto=format&fit=crop" alt="Person arbeitet am Laptop">
+                </div>
+                <div class="content-text">
+                    <h2>Mehr als eine Website – Ihr digitaler Campus.</h2>
+                    <p>Wir glauben, dass eine Online-Präsenz für Tutoren mehr sein muss als eine digitale Visitenkarte. Es ist Ihr virtueller Hörsaal, Ihre Bibliothek und Ihr Büro. Deshalb entwickeln wir ganzheitliche Lösungen, die nicht nur gut aussehen, sondern Ihre Arbeitsprozesse vereinfachen und Ihnen helfen, eine stärkere Bindung zu Ihren Schülern aufzubauen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonial-section">
+            <div class="container">
+                <blockquote>
+                    "Das Team hat meine Vision nicht nur verstanden, sondern übertroffen. Die neue Seite ist intuitiv, stilvoll und hat meine Anfragen verdreifacht."
+                </blockquote>
+                <cite>— Dr. Anna Schmidt, Physik-Dozentin</cite>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const canvas = document.getElementById('background-canvas');
+        if (!canvas) return;
+
+        const formulas = ['(x+a)²=x²+2ax+a²', 'E=mc²', '∫f(x)dx', 'a²+b²=c²', 'y=mx+b', 'Δx/Δt', 'h(x)', 'S=vt', 'ln(e)=1', 'F=ma', 'lim(x→∞)', '∑n'];
+        const formulaCount = 40; // Увеличил количество формул
+        const sizes = ['1.2rem', '1.8rem', '2.5rem', '3rem']; // Различные размеры для разнообразия
+
+        const createFormula = () => {
+            const formula = document.createElement('span');
+            formula.className = 'formula-item';
+            formula.innerText = formulas[Math.floor(Math.random() * formulas.length)];
+
+            formula.style.left = `${Math.random() * 100}vw`;
+            formula.style.top = `${Math.random() * 100}vh`;
+            formula.style.fontSize = sizes[Math.floor(Math.random() * sizes.length)]; // Случайный размер
+            formula.style.animationDuration = `${10 + Math.random() * 20}s`; // Более разнообразная длительность
+            formula.style.animationDelay = `${Math.random() * 10}s`; // Более разнообразная задержка
+            formula.style.opacity = `${0.1 + Math.random() * 0.4}`; // Более заметная, но не мешающая
+
+            canvas.appendChild(formula);
+        };
+
+        // Очищаем старые формулы перед созданием новых (если скрипт запускается повторно)
+        canvas.innerHTML = '';
+        for (let i = 0; i < formulaCount; i++) {
+            createFormula();
+        }
+    });
+</script>
+
+</body>
+</html>

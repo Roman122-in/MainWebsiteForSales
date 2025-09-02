@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experten-Coaching | Jtutor Live-Demo</title>
+    <link rel="stylesheet" href="/css/minimum360.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --background-color: #F9F9F9;
+            --card-background: #FFFFFF;
+            --dashboard-bg: #FFFFFF;
+            --text-color: #1A1A1A;
+            --secondary-text-color: #7A7A7A;
+            --border-color: #EBEBEB;
+            --accent-color: #3D4A55;
+            --font-family-serif: 'DM Serif Display', serif;
+            --font-family-sans: 'Inter', sans-serif;
+            --container-width: 1100px;
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--background-color);
+            font-family: var(--font-family-sans);
+        }
+
+        /* --- NEUES ZWEISPALTIges LAYOUT --- */
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+        }
+
+        .main-content-wrapper {
+            min-width: 0;
+        }
+
+        /* --- Stile des ursprünglichen Inhalts --- */
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 2rem; }
+        .header { background-color: var(--background-color); border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 600; text-decoration: none; color: var(--text-color); letter-spacing: 0.5px; }
+        .nav a { text-decoration: none; color: var(--secondary-text-color); margin: 0 1.5rem; font-weight: 600; }
+        .btn { display: inline-block; padding: 0.7rem 1.5rem; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; border: 1px solid transparent; transition: all var(--transition-speed); }
+        .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+        .btn-primary:hover { background-color: #2c363f; border-color: #2c363f; }
+        .btn-secondary { background-color: transparent; color: var(--accent-color); border-color: var(--border-color); }
+        .btn-secondary:hover { background-color: var(--accent-color); color: #fff; }
+        h1 { font-family: var(--font-family-serif); font-size: 4.5rem; line-height: 1.1; font-weight: 400; }
+        .section { padding: 5rem 0; }
+        .section-subtitle { font-family: var(--font-family-serif); font-size: 2rem; font-weight: 400; margin: 0; color: var(--text-color); }
+        .text-left { text-align: left; }
+        .hero { padding: 7rem 0; text-align: center; }
+        .hero p { font-size: 1.2rem; color: var(--secondary-text-color); max-width: 550px; margin: 1.5rem auto 2.5rem auto; }
+        .grid-intro { display: grid; grid-template-columns: 1fr 2.5fr; gap: 4rem; align-items: start; }
+        .grid-intro p { font-size: 1.1rem; color: var(--secondary-text-color); margin: 0; }
+        .features { border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .grid-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; }
+        .feature-item h3 { font-family: var(--font-family-serif); font-size: 1.5rem; font-weight: 400; }
+        .feature-item p { color: var(--secondary-text-color); }
+        .dashboard-showcase { background-color: var(--card-background); }
+        .grid-dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .dashboard-visual img { width: 100%; border-radius: var(--border-radius); border: 1px solid var(--border-color); }
+        .link-arrow { text-decoration: none; color: var(--accent-color); font-weight: 600; }
+        .footer { padding: 3rem 0; text-align: center; font-size: 0.9rem; color: var(--secondary-text-color); }
+
+        /* --- STILE FÜR DIE SEITENLEISTE --- */
+        .dashboard-sidebar {
+            background-color: var(--dashboard-bg);
+            border-left: 1px solid var(--border-color);
+            padding: 1.5rem;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .dashboard-header { display: flex; align-items: center; margin-bottom: 2rem; }
+        .profile-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--accent-color); color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 12px; }
+        .profile-info strong { display: block; }
+        .profile-info span { font-size: 0.9rem; color: var(--secondary-text-color); }
+        .dashboard-nav { display: flex; flex-direction: column; }
+        .dashboard-nav a { text-decoration: none; color: var(--secondary-text-color); font-weight: 600; padding: 0.8rem 1rem; border-radius: var(--border-radius); margin-bottom: 0.5rem; display: flex; align-items: center; transition: all 0.2s ease; }
+        .dashboard-nav a .bi { margin-right: 1rem; font-size: 1.2rem; }
+        .dashboard-nav a.active, .dashboard-nav a:hover { background-color: var(--accent-color); color: white; }
+        .dashboard-footer { margin-top: auto; text-align: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
+        .logout-btn { text-decoration: none; color: var(--secondary-text-color); font-weight: 600; }
+
+        /* --- Responsivität --- */
+        @media (max-width: 1024px) {
+            .page-layout { grid-template-columns: 1fr; }
+            .dashboard-sidebar { position: static; height: auto; border-left: none; border-top: 2px solid var(--border-color); }
+        }
+        @media (max-width: 992px) {
+            .grid-intro, .grid-features, .grid-dashboard { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-layout">
+
+    <div class="main-content-wrapper">
+        <header class="header">
+            <div class="container header-container">
+                <a href="#" class="logo">Jtutor/Experte</a>
+                <nav class="nav">
+                    <a href="#">Philosophie</a>
+                    <a href="#">Methoden</a>
+                    <a href="#">Kontakt</a>
+                </nav>
+                <a href="#" class="btn btn-secondary">Kunden-Login</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Exzellenz in Bildung. <br>Persönlich. Effektiv.</h1>
+                    <p>Ein maßgeschneidertes Coaching-Programm für anspruchsvolle Ziele.</p>
+                    <a href="#" class="btn btn-primary">Beratungsgespräch anfordern</a>
+                </div>
+            </section>
+
+            <section class="section philosophy-intro">
+                <div class="container grid-intro">
+                    <div>
+                        <h2 class="section-subtitle">Unsere Überzeugung</h2>
+                    </div>
+                    <div>
+                        <p>Wahrer Erfolg entsteht nicht durch Auswendiglernen, sondern durch tiefes Verständnis und die Entwicklung strategischer Denkweisen. Wir formen nicht nur Schüler, sondern zukünftige Denker und Problemlöser.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section features">
+                <div class="container grid-features">
+                    <div class="feature-item">
+                        <h3>Maßgeschneiderte Strategien</h3>
+                        <p>Jeder Lernplan ist ein Unikat, entwickelt auf Basis einer detaillierten Analyse Ihrer Bedürfnisse und Ziele.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Datenbasierte Analyse</h3>
+                        <p>Wir nutzen fortschrittliche Methoden, um Lernfortschritte zu messen und unsere Strategien kontinuierlich zu optimieren.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Exklusiver Zugang</h3>
+                        <p>Über Ihr persönliches Dashboard haben Sie jederzeit Zugriff auf Materialien, Berichte und direktes Feedback.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section dashboard-showcase">
+                <div class="container grid-dashboard">
+                    <div class="dashboard-text">
+                        <h2 class="section-subtitle text-left">Ihr persönliches Dashboard</h2>
+                        <p>Verfolgen Sie Ihren Fortschritt in Echtzeit, greifen Sie auf eine kuratierte Wissensdatenbank zu und kommunizieren Sie nahtlos mit Ihrem Coach. Alle Ihre Erfolge, Berichte und Materialien an einem zentralen Ort.</p>
+                        <a href="#" class="link-arrow">Mehr erfahren →</a>
+                    </div>
+                    <div class="dashboard-visual">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Abstrakte Darstellung eines Analyse-Dashboards">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+        </footer>
+    </div>
+
+    <aside class="dashboard-sidebar">
+        <div class="dashboard-header">
+            <div class="profile-avatar">M</div>
+            <div class="profile-info">
+                <strong>Max Mustermann</strong>
+                <span>Experten-Profil</span>
+            </div>
+        </div>
+        <nav class="dashboard-nav">
+            <a href="#" class="active"><i class="bi bi-grid-1x2-fill"></i> Übersicht</a>
+            <a href="#"><i class="bi bi-calendar-check-fill"></i> Termine</a>
+            <a href="#"><i class="bi bi-people-fill"></i> Schüler</a>
+            <a href="#"><i class="bi bi-envelope-fill"></i> Mailings</a>
+            <a href="#"><i class="bi bi-gear-fill"></i> Einstellungen</a>
+        </nav>
+        <div class="dashboard-footer">
+            <a href="#" class="logout-btn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+        </div>
+    </aside>
+
+</div>
+
+</body>
+</html>

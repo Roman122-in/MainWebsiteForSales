@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="page_title">Tarife & Konditionen | Jtutor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #36322D;
+            --secondary-text-color: #7A7A7A;
+            --border-color: #DCD9D3;
+            --accent-color: #007BFF;
+            --font-serif: 'Lora', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .home-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .home-btn svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        .lang-switcher a {
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            padding: 5px 8px;
+            margin-left: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--secondary-text-color);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .plan-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        .plan-card h3 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 600;
+            font-family: var(--font-serif);
+            margin-bottom: 1rem;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            flex-grow: 1;
+        }
+
+        .plan-card ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .plan-card ul li::before {
+            content: '✓';
+            color: #28a745;
+            position: absolute;
+            left: 0;
+        }
+
+        .plan-card .btn {
+            display: block;
+            text-align: center;
+            padding: 0.8rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .conditions h2 {
+            border-top: 1px solid var(--border-color);
+            padding-top: 3rem;
+        }
+
+        .conditions p {
+             margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+    <header class="page-header">
+        <a href="/" class="home-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+            <span data-translate-key="home_button">Startseite</span>
+        </a>
+        <div class="lang-switcher">
+            <a href="#" data-lang="de" class="active">DE</a>
+            <a href="#" data-lang="en">EN</a>
+        </div>
+    </header>
+
+    <main>
+        <h1 data-translate-key="title">Transparente Preise für Ihren Erfolg</h1>
+        <p class="page-subtitle" data-translate-key="subtitle">Wählen Sie den Plan, der perfekt zu Ihren Zielen passt.</p>
+
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3 data-translate-key="plan1_name">Start-Paket</h3>
+                <div class="price">€300</div>
+                <p data-translate-key="plan1_desc">Die ideale Web-Visitenkarte für den schnellen Start.</p>
+                <ul>
+                    <li data-translate-key="feature_onepager">Einseitige Website</li>
+                    <li data-translate-key="feature_responsive">Responsives Design</li>
+                    <li data-translate-key="feature_contact">Kontaktformular</li>
+                </ul>
+                <a href="/plan120" class="btn" data-translate-key="button_inquire">Jetzt anfragen</a>
+            </div>
+            <div class="plan-card">
+                <h3 data-translate-key="plan2_name">Profi-Paket</h3>
+                <div class="price">€600</div>
+                <p data-translate-key="plan2_desc">Mehr Seiten, Blog und Online-Buchung für mehr Interaktion.</p>
+                <ul>
+                    <li data-translate-key="feature_multipage">Mehrseitige Website (bis 5 S.)</li>
+                    <li data-translate-key="feature_responsive">Responsives Design</li>
+                    <li data-translate-key="feature_blog">Blog & Bewertungen</li>
+                    <li data-translate-key="feature_booking">Online-Terminbuchung</li>
+                </ul>
+                <a href="/plan240" class="btn" data-translate-key="button_inquire">Jetzt anfragen</a>
+            </div>
+            <div class="plan-card">
+                <h3 data-translate-key="plan3_name">Experten-Paket</h3>
+                <div class="price">€900</div>
+                <p data-translate-key="plan3_desc">Die Komplettlösung mit persönlichem Dashboard für volle Kontrolle.</p>
+                <ul>
+                    <li data-translate-key="feature_custom">Individuelles Design</li>
+                    <li data-translate-key="feature_multipage_pro">Mehrseitige Website</li>
+                    <li data-translate-key="feature_blog">Blog & Bewertungen</li>
+                    <li data-translate-key="feature_booking">Online-Terminbuchung</li>
+                    <li data-translate-key="feature_dashboard">Persönliches Dashboard</li>
+                </ul>
+                <a href="/plan360" class="btn" data-translate-key="button_inquire">Jetzt anfragen</a>
+            </div>
+        </div>
+
+        <section class="conditions">
+            <h2 data-translate-key="conditions_title">Wichtige Konditionen & Informationen</h2>
+
+            <h3 data-translate-key="hosting_title">Hosting & Domain</h3>
+            <p data-translate-key="hosting_text">
+                In jedem Paket sind die Kosten für das Webhosting und die Registrierung einer Domain für das erste Jahr bereits enthalten. Nach Ablauf des ersten Jahres müssen das Hosting und die Domain von Ihnen verlängert werden. Die anfallenden Kosten hierfür werden direkt vom Hosting-Anbieter in Rechnung gestellt und sind nicht Teil unseres Angebots. Wir erinnern Sie selbstverständlich rechtzeitig an die anstehende Verlängerung.
+            </p>
+
+            <h3 data-translate-key="payment_title">Zahlungsprozess & Anzahlung</h3>
+            <p data-translate-key="payment_text">
+                Um eine faire Partnerschaft zu gewährleisten, arbeiten wir mit einer 50%-Anzahlung. 50% des Paketpreises werden bei Auftragsbeginn fällig. Die restlichen 50% zahlen Sie erst nach Fertigstellung und Ihrer endgültigen Abnahme der Website. Dies gibt beiden Seiten Planungssicherheit.
+            </p>
+
+            <h3 data-translate-key="guarantee_title">Garantie & Widerrufsrecht</h3>
+            <p data-translate-key="guarantee_text">
+                Da jede Website ein individuell nach Ihren Wünschen angefertigtes digitales Produkt ist, besteht gemäß § 312g Abs. 2 Nr. 1 BGB kein gesetzliches Widerrufsrecht für Verbraucher. Eine Stornierung des Auftrags nach Beginn der Arbeiten oder eine Rückerstattung der Anzahlung ist daher leider nicht möglich. Wir garantieren jedoch, dass die Website alle im jeweiligen Paket beschriebenen Funktionen erfüllt und technisch einwandfrei funktioniert.
+            </p>
+
+            <h3 data-translate-key="demo_title">Testen des Funktionsumfangs</h3>
+            <p data-translate-key="demo_text">
+                Wir verstehen, dass Sie die Funktionalität, insbesondere des persönlichen Dashboards, vorab testen möchten. Gerne stellen wir Ihnen auf Anfrage eine Demo-Seite ohne individuelles Design zur Verfügung. So können Sie sich von der Funktionsweise überzeugen, bevor Sie eine Entscheidung treffen.
+            </p>
+
+            <h3 data-translate-key="contact_title">Fragen oder Wünsche?</h3>
+            <p data-translate-key="contact_text">
+                Haben Sie weitere Fragen zu den Paketen oder spezielle Wünsche? Zögern Sie nicht, uns zu kontaktieren. Schreiben Sie uns einfach eine E-Mail an: <a href="mailto:tutorsrvc@gmail.com">tutorsrvc@gmail.com</a>.
+            </p>
+        </section>
+    </main>
+</div>
+
+<script>
+    const translations = {
+        "de": {
+            "page_title": "Tarife & Konditionen | Jtutor",
+            "home_button": "Startseite",
+            "title": "Transparente Preise für Ihren Erfolg",
+            "subtitle": "Wählen Sie den Plan, der perfekt zu Ihren Zielen passt.",
+            "plan1_name": "Start-Paket",
+            "plan1_desc": "Die ideale Web-Visitenkarte für den schnellen Start.",
+            "feature_onepager": "Einseitige Website",
+            "feature_responsive": "Responsives Design",
+            "feature_contact": "Kontaktformular",
+            "plan2_name": "Profi-Paket",
+            "plan2_desc": "Mehr Seiten, Blog und Online-Buchung für mehr Interaktion.",
+            "feature_multipage": "Mehrseitige Website (bis 5 S.)",
+            "feature_blog": "Blog & Bewertungen",
+            "feature_booking": "Online-Terminbuchung",
+            "plan3_name": "Experten-Paket",
+            "plan3_desc": "Die Komplettlösung mit persönlichem Dashboard für volle Kontrolle.",
+            "feature_custom": "Individuelles Design",
+            "feature_multipage_pro": "Mehrseitige Website",
+            "feature_dashboard": "Persönliches Dashboard",
+            "button_inquire": "Jetzt anfragen",
+            "conditions_title": "Wichtige Konditionen & Informationen",
+            "hosting_title": "Hosting & Domain",
+            "hosting_text": "In jedem Paket sind die Kosten für das Webhosting und die Registrierung einer Domain für das erste Jahr bereits enthalten. Nach Ablauf des ersten Jahres müssen das Hosting und die Domain von Ihnen verlängert werden. Die anfallenden Kosten hierfür werden direkt vom Hosting-Anbieter in Rechnung gestellt und sind nicht Teil unseres Angebots. Wir erinnern Sie selbstverständlich rechtzeitig an die anstehende Verlängerung.",
+            "payment_title": "Zahlungsprozess & Anzahlung",
+            "payment_text": "Um eine faire Partnerschaft zu gewährleisten, arbeiten wir mit einer 50%-Anzahlung. 50% des Paketpreises werden bei Auftragsbeginn fällig. Die restlichen 50% zahlen Sie erst nach Fertigstellung und Ihrer endgültigen Abnahme der Website. Dies gibt beiden Seiten Planungssicherheit.",
+            "guarantee_title": "Garantie & Widerrufsrecht",
+            "guarantee_text": "Da jede Website ein individuell nach Ihren Wünschen angefertigtes digitales Produkt ist, besteht gemäß § 312g Abs. 2 Nr. 1 BGB kein gesetzliches Widerrufsrecht für Verbraucher. Eine Stornierung des Auftrags nach Beginn der Arbeiten oder eine Rückerstattung der Anzahlung ist daher leider nicht möglich. Wir garantieren jedoch, dass die Website alle im jeweiligen Paket beschriebenen Funktionen erfüllt und technisch einwandfrei funktioniert.",
+            "demo_title": "Testen des Funktionsumfangs",
+            "demo_text": "Wir verstehen, dass Sie die Funktionalität, insbesondere des persönlichen Dashboards, vorab testen möchten. Gerne stellen wir Ihnen auf Anfrage eine Demo-Seite ohne individuelles Design zur Verfügung. So können Sie sich von der Funktionsweise überzeugen, bevor Sie eine Entscheidung treffen.",
+            "contact_title": "Fragen oder Wünsche?",
+            "contact_text": "Haben Sie weitere Fragen zu den Paketen oder spezielle Wünsche? Zögern Sie nicht, uns zu kontaktieren. Schreiben Sie uns einfach eine E-Mail an: <a href='mailto:tutorsrvc@gmail.com'>tutorsrvc@gmail.com</a>."
+        },
+        "en": {
+            "page_title": "Plans & Conditions | Jtutor",
+            "home_button": "Home",
+            "title": "Transparent Pricing for Your Success",
+            "subtitle": "Choose the plan that perfectly fits your goals.",
+            "plan1_name": "Start Package",
+            "plan1_desc": "The ideal web business card for a quick start.",
+            "feature_onepager": "One-Page Website",
+            "feature_responsive": "Responsive Design",
+            "feature_contact": "Contact Form",
+            "plan2_name": "Profi Package",
+            "plan2_desc": "More pages, a blog, and online booking for more interaction.",
+            "feature_multipage": "Multi-Page Website (up to 5 p.)",
+            "feature_blog": "Blog & Reviews",
+            "feature_booking": "Online Appointment Booking",
+            "plan3_name": "Expert Package",
+            "plan3_desc": "The complete solution with a personal dashboard for full control.",
+            "feature_custom": "Custom Design",
+            "feature_multipage_pro": "Multi-Page Website",
+            "feature_dashboard": "Personal Dashboard",
+            "button_inquire": "Inquire Now",
+            "conditions_title": "Important Conditions & Information",
+            "hosting_title": "Hosting & Domain",
+            "hosting_text": "Each package includes the cost of web hosting and domain registration for the first year. After the first year, the hosting and domain must be renewed by you. The resulting costs will be billed directly by the hosting provider and are not part of our offer. We will, of course, remind you in due time about the upcoming renewal.",
+            "payment_title": "Payment Process & Down Payment",
+            "payment_text": "To ensure a fair partnership, we work with a 50% down payment. 50% of the package price is due at the start of the project. You pay the remaining 50% only after completion and your final acceptance of the website. This provides planning security for both sides.",
+            "guarantee_title": "Guarantee & Right of Withdrawal",
+            "guarantee_text": "Since each website is a digital product individually customized to your specifications, there is no statutory right of withdrawal for consumers according to § 312g Abs. 2 Nr. 1 BGB (German Civil Code). Therefore, cancellation of the order after work has begun or a refund of the down payment is unfortunately not possible. However, we guarantee that the website will fulfill all functions described in the respective package and will be technically flawless.",
+            "demo_title": "Testing the Functionality",
+            "demo_text": "We understand that you may want to test the functionality, especially the personal dashboard, beforehand. Upon request, we are happy to provide you with a demo page without a custom design. This allows you to convince yourself of how it works before making a decision.",
+            "contact_title": "Questions or Wishes?",
+            "contact_text": "Do you have further questions about the packages or special requests? Do not hesitate to contact us. Simply send us an email at: <a href='mailto:tutorsrvc@gmail.com'>tutorsrvc@gmail.com</a>."
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const langButtons = document.querySelectorAll('.lang-switcher a');
+        const translatableElements = document.querySelectorAll('[data-translate-key]');
+
+        const translatePage = (lang) => {
+            translatableElements.forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        };
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = e.target.getAttribute('data-lang');
+                translatePage(lang);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

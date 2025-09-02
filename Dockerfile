@@ -16,8 +16,8 @@ COPY store/src ./src
 # Собираем проект, пропуская тесты
 RUN mvn clean package -DskipTests
 
-# Этап 2: Создание финального образа на базе минимального JRE
-FROM openjdk:17-jre-slim
+# Этап 2: Создание финального образа на базе минимального JRE (ИСПРАВЛЕНО)
+FROM eclipse-temurin:17-jre-alpine
 
 # Указываем рабочую директорию
 WORKDIR /app

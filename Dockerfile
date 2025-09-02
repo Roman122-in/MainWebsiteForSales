@@ -1,5 +1,5 @@
-# Этап 1: Сборка приложения с помощью Maven
-FROM maven:3.8.5-openjdk-17 AS build
+# Этап 1: Сборка приложения с помощью Maven (ВЕРСИЯ JAVA ИЗМЕНЕНА)
+FROM maven:3.9-eclipse-temurin-21 AS build
 
 # Указываем рабочую директорию внутри контейнера
 WORKDIR /app
@@ -16,8 +16,8 @@ COPY store/src ./src
 # Собираем проект, пропуская тесты
 RUN mvn clean package -DskipTests
 
-# Этап 2: Создание финального образа на базе минимального JRE (ИСПРАВЛЕНО)
-FROM eclipse-temurin:17-jre-alpine
+# Этап 2: Создание финального образа на базе минимального JRE (ВЕРСИЯ JAVA ИЗМЕНЕНА)
+FROM eclipse-temurin:21-jre-alpine
 
 # Указываем рабочую директорию
 WORKDIR /app

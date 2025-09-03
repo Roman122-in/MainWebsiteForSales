@@ -12,13 +12,9 @@
 <body>
 
 <div class="page-wrapper">
-
-
-
     <header class="header">
         <div class="container header-container">
             <a href="#" class="logo">Jtutor{}</a>
-
             <nav class="nav" id="main-nav">
                 <a href="/aboutcompany" data-translate-key="nav_about">Über uns</a>
                 <a href="/tarifs" data-translate-key="nav_packages">Pakete</a>
@@ -52,29 +48,66 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
-
-
-
-
-
-
-
-
     <div class="container">
         <main>
 
 
+
             <section id="about" class="hero">
-                <h1 data-translate-key="hero_title" class="roboto-slab">Werden Sie ein unabhängiger Nachhilfelehrer</h1>
-                <p data-translate-key="hero_subtitle">Erstellen Sie Ihre eigene Webseite, um Schüler direkt zu gewinnen<br>und 100% des Einkommens ohne Zwischenhändler zu erhalten.</p>
-                <div class="hero-steps">
+
+                <style>
+                    /* Начальное состояние анимируемых элементов: они невидимы и сдвинуты вниз */
+                    .hero-anim {
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                    }
+
+                    /* Конечное состояние: элементы становятся видимыми и возвращаются на место */
+                    .hero-anim.is-visible {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    /* Добавляем разную задержку для каждого элемента, чтобы они появлялись по очереди */
+                    .hero-anim:nth-child(2) { transition-delay: 0.15s; }
+                    .hero-anim:nth-child(3) { transition-delay: 0.3s; }
+                </style>
+
+
+                <h1 data-translate-key="hero_title" class="roboto-slab hero-anim">Werden Sie ein unabhängiger Nachhilfelehrer</h1>
+
+                <p data-translate-key="hero_subtitle" class="hero-anim">Erstellen Sie Ihre eigene Webseite, um Schüler direkt zu gewinnen<br>und 100% des Einkommens ohne Zwischenhändler zu erhalten.</p>
+
+                <div class="hero-steps hero-anim">
                     <div class="step-item"><span>1.</span> <span data-translate-key="step1">Paket wählen</span></div>
                     <div class="step-arrow">→</div>
                     <div class="step-item"><span>2.</span> <span data-translate-key="step2">Formular ausfüllen</span></div>
                     <div class="step-arrow">→</div>
                     <div class="step-item"><span>3.</span> <span data-translate-key="step3">Webseite erhalten</span></div>
                 </div>
+
+
+                <script>
+                    // Этот скрипт найдёт все анимируемые элементы внутри секции
+                    // и добавит им класс 'is-visible', чтобы запустить анимацию
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const heroElements = document.querySelectorAll('.hero .hero-anim');
+
+                        // Небольшая задержка перед стартом, чтобы анимация была заметна
+                        setTimeout(() => {
+                            heroElements.forEach(el => {
+                                el.classList.add('is-visible');
+                            });
+                        }, 100); // 100 миллисекунд
+                    });
+                </script>
             </section>
+
+
+
+
+
 
 
             <section id="plans" class="plans-section">
@@ -86,7 +119,7 @@
                             <div class="price">€300</div>
                             <p class="plan-tagline" data-translate-key="start_tagline">Ihr schneller Start in die Online-Welt</p>
                             <div class="plan-timeline" data-translate-key="start_timeline">Lieferzeit: 3 Tage</div>
-                            <a href="/demo-with-bar120" class="btn" data-translate-key="btn_choose">Wiew demo</a>
+                            <a href="/demo-with-bar120" class="btn" data-translate-key="btn_choose">View demo</a>
                         </div>
                     </div>
 
@@ -96,7 +129,7 @@
                             <div class="price">€600</div>
                             <p class="plan-tagline" data-translate-key="pro_tagline">Mehr Schüler und Automatisierung</p>
                             <div class="plan-timeline" data-translate-key="pro_timeline">Lieferzeit: 6 Tage</div>
-                            <a href="/profi-demo240" class="btn" data-translate-key="btn_choose">Wiev demo</a>
+                            <a href="/profi-demo240" class="btn" data-translate-key="btn_choose">View demo</a>
                         </div>
                     </div>
                     <div class="plan-card">
@@ -105,83 +138,91 @@
                             <div class="price">€900</div>
                             <p class="plan-tagline" data-translate-key="expert_tagline">Volle Kontrolle über Ihr Geschäft</p>
                             <div class="plan-timeline" data-translate-key="expert_timeline">Lieferzeit: 9 Tage</div>
-                            <a href="/expert-demo360" class="btn" data-translate-key="btn_choose">Wiev demo</a>
+                            <a href="/expert-demo360" class="btn" data-translate-key="btn_choose">View demo</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="details" class="details-section">
-                <h2 data-translate-key="section_title_features">Was in jedem Paket enthalten ist</h2>
-                <div class="table-container">
-                    <table class="comparison-table">
-                        <thead>
-                        <tr>
-                            <th data-translate-key="tbl_head_feature">Leistung</th>
-                            <th data-translate-key="tbl_head_start">Start (€300)</th>
-                            <th data-translate-key="tbl_head_pro">Profi (€600)</th>
-                            <th data-translate-key="tbl_head_expert">Experte (€900)</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td data-translate-key="tbl_feat_turnkey">Schlüsselfertige Webseite</td>
-                            <td data-translate-key="tbl_val_turnkey_start">One-Pager</td>
-                            <td data-translate-key="tbl_val_turnkey_pro">Mehrseitig (bis 5 S.)</td>
-                            <td data-translate-key="tbl_val_turnkey_expert">Individuelles Design</td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_hosting">Hosting & Domain (1 Jahr)</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_support">Technischer Support (1 Jahr)</td>
-                            <td data-translate-key="tbl_val_support">Standard</td>
-                            <td data-translate-key="tbl_val_support">Standard</td>
-                            <td data-translate-key="tbl_val_support_premium">Premium</td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_responsive">Responsives Design</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_booking">Online-Terminbuchung</td>
-                            <td><span class="cross">✗</span></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_blog">Blog & Bewertungen</td>
-                            <td><span class="cross">✗</span></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_seo">SEO-Grundoptimierung</td>
-                            <td><span class="cross">✗</span></td>
-                            <td data-translate-key="tbl_val_optional">Optional</td>
-                            <td><span class="check">✓</span> <span data-translate-key="tbl_val_included">Inklusive</span></td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_dashboard">Persönliches Dashboard</td>
-                            <td><span class="cross">✗</span></td>
-                            <td><span class="cross">✗</span></td>
-                            <td><span class="check">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td data-translate-key="tbl_feat_delivery">Lieferzeit & Garantie</td>
-                            <td data-translate-key="tbl_val_delivery_start">3 Werktage</td>
-                            <td data-translate-key="tbl_val_delivery_pro">6 Werktage</td>
-                            <td data-translate-key="tbl_val_delivery_expert">9 Werktage</td>
-                        </tr>
-                        </tbody>
-                    </table>
+
+
+
+
+
+
+
+
+            <section id="packages-table" class="details-section">
+                <div class="container">
+                    <h2 data-translate-key="packages_title">Unsere Pakete im Vergleich</h2>
+                    <div class="table-container">
+                        <table class="comparison-table">
+                            <thead>
+                            <tr>
+                                <th data-translate-key="tbl_head_feature">Leistung</th>
+                                <th data-translate-key="tbl_head_start">Start (€300)</th>
+                                <th data-translate-key="tbl_head_pro">Profi (€600)</th>
+                                <th data-translate-key="tbl_head_expert">Experte (€900)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td data-translate-key="tbl_feat_design">Individuelles Design</td>
+                                <td data-translate-key="tbl_val_design_start">Startseite</td>
+                                <td data-translate-key="tbl_val_design_pro">Mehrseitig</td>
+                                <td data-translate-key="tbl_val_design_expert">Exklusiv & Mehrseitig</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="tbl_feat_booking">Online-Terminbuchung</td>
+                                <td><span class="check">✓</span></td>
+                                <td data-translate-key="tbl_val_booking_pro">Erweiterter Kalender</td>
+                                <td data-translate-key="tbl_val_booking_expert">Erweiterter Kalender</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="tbl_feat_dashboard">Persönliches Dashboard</td>
+                                <td><span class="cross">✗</span></td>
+                                <td><span class="cross">✗</span></td>
+                                <td><span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="tbl_feat_custom_func">Individuelle Funktionen</td>
+                                <td><span class="cross">✗</span></td>
+                                <td data-translate-key="tbl_val_custom_func_pro">Nach Absprache</td>
+                                <td><span class="check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="tbl_feat_hosting_domain">Hosting & Domain Inklusive</td>
+                                <td data-translate-key="tbl_val_hosting_start">6 Monate</td>
+                                <td data-translate-key="tbl_val_hosting_pro">9 Monate</td>
+                                <td data-translate-key="tbl_val_hosting_expert">12 Monate</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="tbl_feat_support">Technischer Support</td>
+                                <td data-translate-key="tbl_val_support_std">Standard</td>
+                                <td data-translate-key="tbl_val_support_premium">Premium</td>
+                                <td data-translate-key="tbl_val_support_priority">Prioritärer Premium</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="tbl_feat_guarantee">Garantie</td>
+                                <td><span class="check">✓</span></td>
+                                <td><span class="check">✓</span></td>
+                                <td><span class="check">✓</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
+
+
+
+
+
+
+
+
+
+
             <section class="disclaimer-section">
                 <div class="disclaimer-content">
                     <h3>Ein wichtiger Hinweis zu Ihrer Investition</h3>

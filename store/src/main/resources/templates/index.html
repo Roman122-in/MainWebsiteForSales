@@ -3,359 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate-key="page_title">Jtutor</title>
+    <title>Jtutor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 
-<div class="page-wrapper">
-    <header class="header">
-        <div class="container header-container">
-            <a href="#" class="logo">Jtutor{}</a>
-            <nav class="nav" id="main-nav">
-                <a href="/aboutcompany" data-translate-key="nav_about">Über uns</a>
-                <a href="/tarifs" data-translate-key="nav_packages">Pakete</a>
-                <a href="/service" data-translate-key="nav_features">Service</a>
-                <a href="#portfolio" data-translate-key="nav_portfolio">Arbeiten</a>
-                <a href="#how-it-works" data-translate-key="nav_process">Prozess</a>
-            </nav>
-
-            <div class="header-right-controls">
-                <button class="lang-btn" data-translate-key="lang_btn">EN</button>
-                <button class="hamburger" id="menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
-    <div class="mobile-nav-panel" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <span class="mobile-nav-title">Menü</span>
-            <button id="close-menu-btn" class="close-btn" aria-label="Close menu">&times;</button>
-        </div>
-        <nav class="mobile-nav-links">
-            <a href="/aboutcompany" data-translate-key="nav_about">Über uns</a>
-            <a href="/tarifs" data-translate-key="nav_packages">Pakete</a>
-            <a href="/service" data-translate-key="nav_features">Service</a>
-            <a href="#portfolio" data-translate-key="nav_portfolio">Arbeiten</a>
-            <a href="#how-it-works" data-translate-key="nav_process">Prozess</a>
+<header class="header">
+    <div class="container header-container">
+        <a href="#" class="logo">Jtutor{}</a>
+        <nav class="nav" id="main-nav">
+            <a href="/aboutcompany">Über uns</a>
+            <a href="/tarifs">Pakete</a>
+            <a href="/service">Service</a>
+            <a href="#portfolio">Arbeiten</a>
+            <a href="#how-it-works">Prozess</a>
         </nav>
-    </div>
-    <div class="overlay" id="overlay"></div>
-
-    <div class="container">
-        <main>
-
-
-
-            <section id="about" class="hero">
-
-                <style>
-                    /* Начальное состояние анимируемых элементов: они невидимы и сдвинуты вниз */
-                    .hero-anim {
-                        opacity: 0;
-                        transform: translateY(20px);
-                        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-                    }
-
-                    /* Конечное состояние: элементы становятся видимыми и возвращаются на место */
-                    .hero-anim.is-visible {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-
-                    /* Добавляем разную задержку для каждого элемента, чтобы они появлялись по очереди */
-                    .hero-anim:nth-child(2) { transition-delay: 0.15s; }
-                    .hero-anim:nth-child(3) { transition-delay: 0.3s; }
-                </style>
-
-
-                <h1 data-translate-key="hero_title" class="roboto-slab hero-anim">Werden Sie ein unabhängiger Nachhilfelehrer</h1>
-
-                <p data-translate-key="hero_subtitle" class="hero-anim">Erstellen Sie Ihre eigene Webseite, um Schüler direkt zu gewinnen<br>und 100% des Einkommens ohne Zwischenhändler zu erhalten.</p>
-
-                <div class="hero-steps hero-anim">
-                    <div class="step-item"><span>1.</span> <span data-translate-key="step1">Paket wählen</span></div>
-                    <div class="step-arrow">→</div>
-                    <div class="step-item"><span>2.</span> <span data-translate-key="step2">Formular ausfüllen</span></div>
-                    <div class="step-arrow">→</div>
-                    <div class="step-item"><span>3.</span> <span data-translate-key="step3">Webseite erhalten</span></div>
-                </div>
-
-
-                <script>
-                    // Этот скрипт найдёт все анимируемые элементы внутри секции
-                    // и добавит им класс 'is-visible', чтобы запустить анимацию
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const heroElements = document.querySelectorAll('.hero .hero-anim');
-
-                        // Небольшая задержка перед стартом, чтобы анимация была заметна
-                        setTimeout(() => {
-                            heroElements.forEach(el => {
-                                el.classList.add('is-visible');
-                            });
-                        }, 100); // 100 миллисекунд
-                    });
-                </script>
-            </section>
-
-
-
-
-
-
-
-            <section id="plans" class="plans-section">
-                <h2 data-translate-key="section_title_solutions">Fertige Lösungen für Ihre Praxis</h2>
-                <div class="plans-container">
-                    <div class="plan-card">
-                        <div class="card-content">
-                            <h3>Paket "Start"</h3>
-                            <div class="price">€300</div>
-                            <p class="plan-tagline" data-translate-key="start_tagline">Ihr schneller Start in die Online-Welt</p>
-                            <div class="plan-timeline" data-translate-key="start_timeline">Lieferzeit: 3 Tage</div>
-                            <a href="/demo-with-bar120" class="btn" data-translate-key="btn_choose">View demo</a>
-                        </div>
-                    </div>
-
-                    <div class="plan-card">
-                        <div class="card-content">
-                            <h3>Paket "Profi"</h3>
-                            <div class="price">€600</div>
-                            <p class="plan-tagline" data-translate-key="pro_tagline">Mehr Schüler und Automatisierung</p>
-                            <div class="plan-timeline" data-translate-key="pro_timeline">Lieferzeit: 6 Tage</div>
-                            <a href="/profi-demo240" class="btn" data-translate-key="btn_choose">View demo</a>
-                        </div>
-                    </div>
-                    <div class="plan-card">
-                        <div class="card-content">
-                            <h3>Paket "Experte"</h3>
-                            <div class="price">€900</div>
-                            <p class="plan-tagline" data-translate-key="expert_tagline">Volle Kontrolle über Ihr Geschäft</p>
-                            <div class="plan-timeline" data-translate-key="expert_timeline">Lieferzeit: 9 Tage</div>
-                            <a href="/expert-demo360" class="btn" data-translate-key="btn_choose">View demo</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-
-
-
-
-
-
-            <section id="packages-table" class="details-section">
-                <div class="container">
-                    <h2 data-translate-key="packages_title">Unsere Pakete im Vergleich</h2>
-                    <div class="table-container">
-                        <table class="comparison-table">
-                            <thead>
-                            <tr>
-                                <th data-translate-key="tbl_head_feature">Leistung</th>
-                                <th data-translate-key="tbl_head_start">Start (€300)</th>
-                                <th data-translate-key="tbl_head_pro">Profi (€600)</th>
-                                <th data-translate-key="tbl_head_expert">Experte (€900)</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td data-translate-key="tbl_feat_design">Individuelles Design</td>
-                                <td data-translate-key="tbl_val_design_start">Startseite</td>
-                                <td data-translate-key="tbl_val_design_pro">Mehrseitig</td>
-                                <td data-translate-key="tbl_val_design_expert">Exklusiv & Mehrseitig</td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="tbl_feat_booking">Online-Terminbuchung</td>
-                                <td><span class="check">✓</span></td>
-                                <td data-translate-key="tbl_val_booking_pro">Erweiterter Kalender</td>
-                                <td data-translate-key="tbl_val_booking_expert">Erweiterter Kalender</td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="tbl_feat_dashboard">Persönliches Dashboard</td>
-                                <td><span class="cross">✗</span></td>
-                                <td><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="tbl_feat_custom_func">Individuelle Funktionen</td>
-                                <td><span class="cross">✗</span></td>
-                                <td data-translate-key="tbl_val_custom_func_pro">Nach Absprache</td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="tbl_feat_hosting_domain">Hosting & Domain Inklusive</td>
-                                <td data-translate-key="tbl_val_hosting_start">6 Monate</td>
-                                <td data-translate-key="tbl_val_hosting_pro">9 Monate</td>
-                                <td data-translate-key="tbl_val_hosting_expert">12 Monate</td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="tbl_feat_support">Technischer Support</td>
-                                <td data-translate-key="tbl_val_support_std">Standard</td>
-                                <td data-translate-key="tbl_val_support_premium">Premium</td>
-                                <td data-translate-key="tbl_val_support_priority">Prioritärer Premium</td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="tbl_feat_guarantee">Garantie</td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-
-
-
-
-
-
-
-
-
-            <section class="disclaimer-section">
-                <div class="disclaimer-content">
-                    <h3>Ein wichtiger Hinweis zu Ihrer Investition</h3>
-                    <p>
-                        Sehr geehrte Kundinnen und Kunden, wir möchten transparent kommunizieren: Eine von uns erstellte Website ist ein leistungsstarkes Werkzeug, das theoretisch das Potenzial hat, Ihnen geschäftlichen Nutzen zu bringen.
-                    </p>
-                    <p>
-                        Gäbe es eine universelle Formel für garantierten Erfolg, würden wir sie ohne zu zögern mit Ihnen teilen. Bitte verstehen Sie, dass Sie mit dem Kauf unserer Dienstleistung in erster Linie in die technische Realisierung Ihrer eigenen Idee investieren. Die Verantwortung für strategische Entscheidungen und den letztendlichen Erfolg Ihres Vorhabens liegt bei Ihnen.
-                    </p>
-                    <p>
-                        Wir verkaufen keinen garantierten Erfolg – wir verkaufen die professionelle Umsetzung der Vision, die Sie durch Ihre Ambitionen für Wachstum und eine größere Reichweite selbst entwickelt haben. Wir wissen, dass dies offensichtlich ist, wollten es aber noch einmal betonen.
-                    </p>
-                    <p class="signature">
-                        Mit freundlichen Grüßen,<br>
-                        Ihr Jtutor-Team
-                    </p>
-                </div>
-            </section>
-
-
-            <section id="portfolio" class="portfolio-section">
-                <h2 data-translate-key="portfolio_title">Beispiele unserer Arbeit</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1588702547919-26089e690ecc?q=80&w=800&auto=format&fit=crop" alt="Webseite für Mathe-Nachhilfe">
-                        <div class="portfolio-info">
-                            <h3 data-translate-key="portfolio1_title">Webseite für Mathe-Nachhilfe</h3>
-                            <p data-translate-key="portfolio1_desc">Paket "Start". Eine prägnante Web-Visitenkarte mit den wichtigsten Informationen.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=800&auto=format&fit=crop" alt="Webseite für eine Sprachschule">
-                        <div class="portfolio-info">
-                            <h3 data-translate-key="portfolio2_title">Webseite für eine Sprachschule</h3>
-                            <p data-translate-key="portfolio2_desc">Paket "Profi". Mehrseitige Webseite mit Blog und Online-Buchungssystem.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Plattform für einen Online-Coach">
-                        <div class="portfolio-info">
-                            <h3 data-translate-key="portfolio3_title">Plattform für einen Online-Coach</h3>
-                            <p data-translate-key="portfolio3_desc">Paket "Experte". Individuelle Lösung mit persönlichem Dashboard.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="testimonials" class="testimonials-section">
-                <div class="container">
-                    <h2 class="section-title">Was unsere Kunden sagen</h2>
-                    <div class="testimonials-wrapper">
-
-                        <div class="testimonial-item">
-                            <p class="testimonial-text">
-                                "Die Qualität der Website ist hervorragend. Wir hatten anfangs ein paar Schwierigkeiten mit der Domain, und die Reaktion des Teams war nicht immer sofortig. Am Ende wurde das Problem aber professionell gelöst und wir sind mit dem Ergebnis zufrieden."
-                            </p>
-                            <footer class="testimonial-author">
-                                — Markus B., Mathe-Tutor
-                            </footer>
-                        </div>
-
-                        <div class="testimonial-item">
-                            <p class="testimonial-text">
-                                "Seit dem Launch meiner neuen Webseite habe ich 50% mehr Anfragen von Schülern erhalten. Das Design ist professionell und die Seite ist sehr einfach zu bedienen. Eine klare Empfehlung!"
-                            </p>
-                            <footer class="testimonial-author">
-                                — Julia K., Englisch-Tutorin
-                            </footer>
-                        </div>
-
-                        <div class="testimonial-item">
-                            <p class="testimonial-text">
-                                "Der gesamte Prozess war unkompliziert und das Team hat alle meine Wünsche perfekt umgesetzt. Endlich eine Webseite, die mich wirklich repräsentiert!"
-                            </p>
-                            <footer class="testimonial-author">
-                                — Dr. Schmidt, Physik-Dozent
-                            </footer>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section id="how-it-works" class="how-it-works-section">
-                <h2 data-translate-key="process_title">Unser Arbeitsprozess</h2>
-                <div class="steps-container">
-                    <div class="step">
-                        <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg></div>
-                        <h3 data-translate-key="process1_title">Anfrage & Beratung</h3>
-                        <p data-translate-key="process1_desc">Sie wählen ein Paket und senden eine Anfrage. Wir kontaktieren Sie, um Ihre Ziele, Zielgruppe und Designwünsche im Detail zu besprechen.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></div>
-                        <h3 data-translate-key="process2_title">Design & Entwicklung</h3>
-                        <p data-translate-key="process2_desc">Wir erstellen ein Designkonzept und beginnen nach Ihrer Freigabe mit der technischen Umsetzung Ihrer Webseite.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path></svg></div>
-                        <h3 data-translate-key="process3_title">Übergabe & Launch</h3>
-                        <p data-translate-key="process3_desc">Wir präsentieren Ihnen die fertige Webseite, nehmen letzte Anpassungen vor und stellen sie nach Ihrer endgültigen Zustimmung online.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="project-description" class="description-section">
-                <div class="description-content">
-                    <h2 data-translate-key="desc_title">Ihr direkter Weg zu mehr Schülern – ohne Provisionen</h2>
-                    <p data-translate-key="desc_p1">
-                        In der heutigen digitalen Welt sind Online-Plattformen und Agenturen für viele Nachhilfelehrer der erste Schritt, um Schüler zu finden. Doch dieser Komfort hat seinen Preis: hohe Provisionen, die einen erheblichen Teil Ihres hart verdienten Einkommens aufzehren, mangelnde Kontrolle über Ihren eigenen Auftritt und keine Möglichkeit, eine persönliche Marke aufzubauen. Sie sind nur ein Profil unter vielen, abhängig von den Regeln und Algorithmen Dritter.
-                    </p>
-                    <p data-translate-key="desc_p2">
-                        Jtutor wurde aus der Überzeugung gegründet, dass es einen besseren Weg geben muss. Unsere Mission ist es, qualifizierten Nachhilfelehrern wie Ihnen die Werkzeuge an die Hand zu geben, um volle Unabhängigkeit zu erlangen. Wir glauben, dass Sie 100% Ihres Einkommens verdienen und die Freiheit haben sollten, Ihr Geschäft nach Ihren eigenen Vorstellungen zu gestalten. Anstatt monatlich Gebühren an Plattformen zu zahlen, investieren Sie einmalig in Ihren eigenen, professionellen Web-Auftritt – ein digitales Zuhause, das Ihnen gehört.
-                    </p>
-                    <p data-translate-key="desc_p3">
-                        Wir bieten Ihnen keine komplizierten Baukästen oder technischen Herausforderungen. Unsere Pakete sind "Rundum-Sorglos-Lösungen". Von der einfachen, aber eleganten Web-Visitenkarte ("Start"-Paket) bis hin zur voll ausgestatteten Business-Plattform mit Online-Buchung und persönlichem Dashboard ("Experte"-Paket) – wir kümmern uns um alles. Domain, Hosting, Design, technische Wartung und Support für ein ganzes Jahr sind immer inklusive. So können Sie sich auf das konzentrieren, was Sie am besten können: unterrichten. Bauen Sie Ihre eigene Marke auf, kommunizieren Sie direkt mit Ihren Schülern und gestalten Sie eine nachhaltige Zukunft für Ihr Nachhilfegeschäft.
-                    </p>
-                </div>
-            </section>
-
-        </main>
-    </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="payment-icons">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png" alt="Visa" class="payment-icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="Mastercard" class="payment-icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Single_Euro_Payments_Area_logo.svg/2560px-Single_Euro_Payments_Area_logo.svg.png" alt="SEPA" class="payment-icon">
-            </div>
-            <p>&copy; 2025 Jtutor. <span data-translate-key="footer_copyright">Alle Rechte vorbehalten.</span></p>
+        <div class="header-right-controls">
+            <button class="lang-btn">EN</button>
         </div>
-    </footer>
-</div>
+    </div>
+</header>
 
-<script src="/js/index.js"></script>
+<main>
+    <div class="swiper-container hero-slideshow">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide-1">
+                <div class="slide-text-content">
+                    <div class="text-content-inner">
+                        <h2 class="animated-text">Sind Sie Lehrer? Wir finden, diese harte Arbeit verdient eine <span class="highlight">faire Belohnung</span></h2>
+                    </div>
+                </div>
+                <div class="slide-image">
+                    <div class="image-overlay-text animated-text">
+                        Werde ein unabhängiger Tutor
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide-2">
+                <div class="slide-text-content">
+                    <div class="text-content-inner">
+                        <h2 class="animated-text">Plattformen werden reich – mit Ihrem Geld, mit Ihrer Arbeit <span class="highlight">Machen Sie Schluss damit!</span></h2>
+                    </div>
+                </div>
+                <div class="slide-image">
+                    <div class="image-overlay-text animated-text">
+                        Machen Sie Schluss damit!
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide-3">
+                <div class="slide-text-content">
+                    <div class="text-content-inner">
+                        <h2 class="animated-text">Hören Sie auf, Ihr Einkommen zu teilen. Mit Ihrer Webseite behalten Sie <span class="highlight">100% Ihrer Einnahmen</span></h2>
+                    </div>
+                </div>
+                <div class="slide-image">
+                    <div class="text-background animated-text">
+                        <div class="image-overlay-text overlay-top">
+                            Ihre eigene Webseite!
+                        </div>
+                        <div class="image-overlay-text overlay-bottom">
+                            Zahlen Sie nie wieder Provision!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <section id="plans" class="plans-section">
+        <div class="container">
+            <h2 class="section-title">Fertige Lösungen für Ihre Praxis</h2>
+            <div class="plans-container">
+                <div class="plan-card">
+                    <h3>Paket "Start"</h3>
+                    <div class="price">€300</div>
+                    <p class="plan-tagline">Ihr schneller Start in die Online-Welt</p>
+                    <div class="plan-timeline">Lieferzeit: 3 Tage</div>
+                    <a href="/demo-with-bar120" class="btn">View demo</a>
+                </div>
+                <div class="plan-card popular">
+                    <div class="popular-badge">Beliebt</div>
+                    <h3>Paket "Profi"</h3>
+                    <div class="price">€600</div>
+                    <p class="plan-tagline">Mehr Schüler und Automatisierung</p>
+                    <div class="plan-timeline">Lieferzeit: 6 Tage</div>
+                    <a href="/profi-demo240" class="btn">View demo</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Paket "Experte"</h3>
+                    <div class="price">€900</div>
+                    <p class="plan-tagline">Volle Kontrolle über Ihr Geschäft</p>
+                    <div class="plan-timeline">Lieferzeit: 9 Tage</div>
+                    <a href="/expert-demo360" class="btn">View demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tarife-visual" class="tarife-visual-section">
+        <div class="container">
+            <div class="content-column left-column">
+                <div class="info-block animated-item">
+                    <h3>Andere verkaufen und vergessen?</h3>
+                    <p>Wir bleiben an Ihrer Seite. Wir garantieren professionellen 12/6 Support für alle Ihre Anliegen</p>
+                </div>
+                <div class="info-block animated-item">
+                    <h3>Die Kraft und Stabilität von Java</h3>
+                    <p>Wir nutzen Java – eine bewährte Technologie, die maximale Reaktionsfähigkeit und Zuverlässigkeit für Ihre Website gewährleistet</p>
+                </div>
+                <div class="info-block animated-item">
+                    <h3>Gebaut für heute, bereit für morgen</h3>
+                    <p>Ihr Unternehmen wächst, und Ihre Website wächst mit. Wir schaffen skalierbare Lösungen für Ihre Zukunft</p>
+                </div>
+            </div>
+
+            <div class="center-column">
+                <div class="main-image-frame animated-item"></div>
+                <div class="cta-container animated-item">
+                    <h2>Bereit für den nächsten Schritt?</h2>
+                    <a href="#contact-form" class="cta-button">Jetzt Projekt starten</a>
+                </div>
+            </div>
+
+            <div class="content-column right-column">
+                <div class="info-block animated-item">
+                    <h3>Unsicher über das Endergebnis?</h3>
+                    <p>Kein Problem. Unsere einjährige Garantie umfasst kostenlose Designanpassungen und die Erweiterung von Funktionen</p>
+                </div>
+                <div class="info-block animated-item">
+                    <h3>Ein Prozess ohne Komplikationen</h3>
+                    <p>Domain und Datenbank für ein Jahr geschenkt. Sie bestellen einfach und erhalten ein fertiges Produkt, ohne sich um Zahlungen oder technische Details zu kümmern</p>
+                </div>
+                <div class="info-block animated-item">
+                    <h3>Ihr Fokus: Ihr Business</h3>
+                    <p>Unser Fokus: Ihre Website. Konzentrieren Sie sich auf das, was zählt – wir kümmern uns um die Technik</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="tech-stack" class="tech-stack-section">
+        <div class="container">
+
+            <div class="tech-stack-container">
+
+                <div class="tech-article-column">
+
+                    <article class="tech-article">
+                        <h2 class="article-main-title">Eine solide Basis für Ihren Erfolg</h2>
+                        <p class="article-intro">Die Wahl der richtigen Technologie ist das Fundament für eine erfolgreiche Website. Wir setzen auf eine Kombination, die von den größten Unternehmen der Welt verwendet wird, um Ihnen maximale Leistung, Sicherheit und Zukunftssicherheit zu garantieren.</p>
+
+                        <div class="article-section">
+                            <div class="article-text-content">
+                                <h3>Warum ist Java besser als PHP & Co.?</h3>
+                                <p>Stellen Sie sich vor, Sie bauen ein Haus. PHP ist wie ein bewährtes Holzhaus – gut für viele Projekte. Java ist wie ein Fundament aus Stahlbeton, das von Anfang an auf maximale Stabilität und enormes Wachstum ausgelegt ist. Deshalb sind Websites auf Java-Basis nicht nur schneller, sondern auch deutlich sicherer gegen Angriffe.</p>
+                                <blockquote>
+                                    Ihre Website läuft auf der gleichen Technologie, die von Institutionen wie der <strong>NASA, Google und dem Pentagon</strong> für ihre kritischsten Systeme verwendet wird.
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="article-section">
+                            <div class="article-text-content">
+                                <h3>Was bedeutet "Spring Framework" für Sie?</h3>
+                                <p>Wenn Java der Stahlbeton ist, dann ist Spring der professionelle Baukasten mit vorgefertigten Premium-Modulen. Anstatt jedes Rad neu zu erfinden, verwenden wir industrieerprobte Komponenten für Sicherheit und Datenbankzugriffe. Für Sie bedeutet das: <strong>schnellere Entwicklung, weniger Fehler und eine spürbar höhere Qualität</strong> des Endprodukts.</p>
+                            </div>
+                        </div>
+
+                        <div class="article-section">
+                            <div class="article-text-content">
+                                <h3>Ihr Vorteil: Eine Investition in die Zukunft</h3>
+                                <p>Eine Website auf Java & Spring ist keine kurzfristige Lösung, sondern ein stabiles Geschäfts-Asset. Sie ist eine Investition, die sich auszahlt, indem sie über Jahre hinweg zuverlässig funktioniert und problemlos mit Ihren Ambitionen mitwächst, ohne dass eine teure Neuentwicklung nötig wird.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div> </div> </div> </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-header">
+            <h2 class="section-title">Beispiele unserer Arbeit</h2>
+        </div>
+        <div class="portfolio-grid">
+            <a href="/demo-with-bar120" class="portfolio-item wide animated-item">
+                <div class="portfolio-item-content">
+                    <h3>Webseite für einen Coach</h3>
+                    <p>Branding & Buchungssystem</p>
+                </div>
+            </a>
+            <a href="/expert-demo360" class="portfolio-item animated-item">
+                <div class="portfolio-item-content">
+                    <h3>Online-Shop für Handwerk</h3>
+                    <p>E-Commerce</p>
+                </div>
+            </a>
+            <a href="/profi-demo240" class="portfolio-item animated-item">
+                <div class="portfolio-item-content">
+                    <h3>Firmenwebsite</h3>
+                    <p>Corporate Design</p>
+                </div>
+            </a>
+            <a href="/demo-with-bar120" class="portfolio-item animated-item">
+                <div class="portfolio-item-content">
+                    <h3>Landingpage für Event</h3>
+                    <p>Marketing & Design</p>
+                </div>
+            </a>
+            <a href="/profi-demo240" class="portfolio-item wide animated-item">
+                <div class="portfolio-item-content">
+                    <h3>Tutor-Dashboard</h3>
+                    <p>Web-Anwendung</p>
+                </div>
+            </a>
+            <a href="/expert-demo360" class="portfolio-item animated-item"> <div class="portfolio-item-content">
+                <h3>Mobilität App</h3>
+                <p>UX/UI Design</p>
+            </div>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Was unsere Kunden sagen</h2>
+
+            <div class="testimonials-grid">
+
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        Das Team hat meine Vision perfekt umgesetzt. Der gesamte Prozess war transparent und professionell. Meine neue Webseite hat mir geholfen, meine Schülerzahl innerhalb von zwei Monaten zu verdoppeln!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Foto von Markus Schmidt">
+                        <div class="author-details">
+                            <h4>Markus Schmidt</h4>
+                            <span>Online-Coach für Mathematik</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-empty">★</span>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        Die fertige Webseite ist wirklich top und funktioniert einwandfrei. Anfangs gab es eine kleine Verzögerung bei der Antwort auf meine Mails, was mich etwas beunruhigt hat. Aber nachdem wir uns abgestimmt hatten, wurde mein Problem sehr schnell und kompetent gelöst.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto von Anna Bauer">
+                        <div class="author-details">
+                            <h4>Anna Bauer</h4>
+                            <span>Sprachlehrerin</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        Absolut empfehlenswert! Die neue Seite sieht nicht nur modern aus, sondern ist auch unglaublich schnell. Ich erhalte viel mehr Anfragen als früher. Ein großes Dankeschön für die tolle Arbeit!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/78.jpg" alt="Foto von Lena Richter">
+                        <div class="author-details">
+                            <h4>Lena Richter</h4>
+                            <span>Inhaberin, Kreativstudio</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div> </div> </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Lassen Sie uns über Ihr Projekt sprechen</h2>
+            <div class="form-wrapper">
+                <form class="contact-form" action="/submit-contact-form" method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Ihr Name</label>
+                        <input type="text" id="name" name="name" placeholder="Wie heißen Sie?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wie sollen wir Sie kontaktieren?</label>
+                        <div class="contact-preference-group">
+                            <input type="radio" id="pref-telegram" name="contact_preference" value="telegram" checked>
+                            <label for="pref-telegram">Telegram</label>
+
+                            <input type="radio" id="pref-whatsapp" name="contact_preference" value="whatsapp">
+                            <label for="pref-whatsapp">WhatsApp</label>
+
+                            <input type="radio" id="pref-viber" name="contact_preference" value="viber">
+                            <label for="pref-viber">Viber</label>
+
+                            <input type="radio" id="pref-email" name="contact_preference" value="email">
+                            <label for="pref-email">E-Mail</label>
+
+                            <input type="radio" id="pref-call" name="contact_preference" value="call">
+                            <label for="pref-call">Anruf</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-info">Ihre E-Mail oder Telefonnummer / Nickname</label>
+                        <input type="text" id="contact-info" name="contact_info" placeholder="Ihre Kontaktinformation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Ihre Nachricht</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Erzählen Sie uns kurz von Ihrem Projekt..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Anfrage senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="payment-methods">
+        <div class="container">
+            <p class="payment-title">Sichere Zahlungsmethoden</p>
+            <div class="payment-logos">
+                <div class="payment-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Single_Euro_Payments_Area_logo.svg" alt="SEPA Logo">
+                </div>
+                <div class="payment-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa Logo">
+                </div>
+                <div class="payment-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png" alt="Mastercard Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/js/index.js">
+
+</script>
+<script src="/js/form-handler.js">
+
+</script>
+
 </body>
 </html>

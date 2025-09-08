@@ -603,7 +603,7 @@ blockquote strong {
 
 .portfolio-item:nth-child(1) { background-image: url('/images/trener.png'); }
 .portfolio-item:nth-child(2) { background-image: url('/images/onlineshop.png'); }
-.portfolio-item:nth-child(3) { background-image: url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); }
+.portfolio-item:nth-child(3) { background-image: url('/images/company.png'); }
 .portfolio-item:nth-child(4) { background-image: url('/images/ceremony.png'); }
 .portfolio-item:nth-child(5) { background-image: url('/images/tutordashboard.png'); }
 .portfolio-item:nth-child(6) { background-image: url('/images/mobileapp.png'); }
@@ -901,6 +901,15 @@ blockquote strong {
 }
 
 
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 
     .section-title {
@@ -937,6 +946,7 @@ blockquote strong {
     }
     .swiper-slide {
         flex-direction: column;
+        height: auto; /* Позволяем слайду быть гибким */
     }
     .slide-text-content, .slide-image {
         flex-basis: auto;
@@ -946,6 +956,10 @@ blockquote strong {
         padding: 25px;
         text-align: center;
         border-radius: 15px 15px 0 0;
+        min-height: 200px; /* ✅ Задаем минимальную высоту для текстового блока */
+        display: flex; /* ✅ Добавляем flex для вертикального выравнивания */
+        flex-direction: column;
+        justify-content: center;
     }
     .text-content-inner h2 {
         font-size: 2.2em;

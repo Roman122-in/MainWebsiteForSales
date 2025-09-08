@@ -1,4 +1,4 @@
-/* --- Premium Minimalist Design --- */
+
 :root {
     --background-color: #F9F9F9;
     --card-background: #FFFFFF;
@@ -224,7 +224,7 @@ h1 {
         justify-content: space-between;
     }
 
-    /* === ДОПОЛНЕНИЯ === */
+
     .container {
         padding: 0 1.5rem;
     }
@@ -241,6 +241,6 @@ h1 {
         font-size: 1.8rem;
     }
     .grid-intro, .grid-features, .grid-dashboard {
-        gap: 2.5rem; /* Уменьшаем расстояние между элементами в сетках */
+        gap: 2.5rem;
     }
 }

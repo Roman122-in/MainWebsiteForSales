@@ -199,19 +199,16 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* Ваши существующие правила */
+
     .header-container { flex-direction: column; gap: 1.5rem; }
     .scroll-track { padding: 0 2rem; }
     .cockpit-features { flex-direction: column; gap: 1rem; }
 
-    /* === ДОПОЛНЕНИЯ === */
 
-    /* Скрываем навигацию */
     .nav {
         display: none;
     }
 
-    /* Уменьшаем отступы и шрифты */
     .section {
         padding: 4rem 0;
     }

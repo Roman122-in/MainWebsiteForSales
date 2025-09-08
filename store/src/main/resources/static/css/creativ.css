@@ -1,10 +1,10 @@
-/* --- CSS Variablen & Grundstile --- */
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
     --bg-color: #03040B;
-    --primary-accent: #00FFFF; /* Electric Cyan */
-    --secondary-accent: #F900FF; /* Magenta */
+    --primary-accent: #00FFFF;
+    --secondary-accent: #F900FF;
     --text-color: #E0E0E0;
     --border-color: rgba(0, 255, 255, 0.2);
     --font-heading: 'Orbitron', sans-serif;
@@ -320,24 +320,20 @@ h1, h2 {
         background: var(--bg-color);
     }
 
-    /* --- МОИ ДОПОЛНЕНИЯ --- */
-
-    /* Скрываем навигацию, чтобы не ломать шапку (нужно бургер-меню) */
     .main-nav {
         display: none;
     }
 
-    /* Уменьшаем отступы секций */
+
     .about-section, .contact-section, .gallery-section {
         padding: 80px 20px;
     }
 
-    /* Уменьшаем шрифты заголовков */
+
     .about-text h2, .contact-section h2, .gallery-section h2 {
         font-size: 2.2rem;
     }
 
-    /* Уменьшаем горизонтальные отступы шапки */
     .main-header {
         padding-left: 20px;
         padding-right: 20px;
@@ -357,7 +353,7 @@ h1, h2 {
     .hero .subtitle {
         font-size: 1rem;
     }
-    /* Дополнительно уменьшаем кнопку */
+
     .cta-button {
         padding: 12px 28px;
     }

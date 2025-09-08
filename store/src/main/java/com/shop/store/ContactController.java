@@ -27,7 +27,7 @@ public class ContactController {
             @RequestParam("contact_info") String contactInfo,
             @RequestParam(name = "message", required = false) String message) {
 
-        // Просто вызываем метод из нашего сервиса
+
         emailService.sendContactEmail(name, contactPreference, contactInfo, message);
 
         return "{\"status\": \"success\"}";

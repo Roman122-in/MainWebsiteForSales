@@ -1,4 +1,3 @@
-/* --- Шрифты и Основные Стили --- */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;700&display=swap');
 
 :root {
@@ -33,8 +32,8 @@ body {
 
 h1, h2, h3 {
     font-family: 'Syne', sans-serif;
-    font-weight: 700; /* ИЗМЕНЕНО: Сделано чуть менее жирным для компактности */
-    letter-spacing: -0.02em; /* ДОБАВЛЕНО: Слегка сжимает буквы, убирая "растянутость" */
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--white);
     margin-top: 0;
 }
@@ -85,8 +84,6 @@ section {
     color: var(--primary-accent);
 }
 
-
-/* --- Секция "Hero" (Главная) --- */
 .hero {
     height: 80vh;
     min-height: 500px;
@@ -140,14 +137,14 @@ section {
 }
 .approach-image {
     flex: 1;
-    border-radius: 15px; /* ДОБАВЛЕНО: Скругляем углы контейнера */
-    overflow: hidden; /* ДОБАВЛЕНО: Обрезаем все, что выходит за рамки */
-    aspect-ratio: 16 / 10; /* ДОБАВЛЕНО: Задаем пропорции, чтобы блок не был вытянутым */
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
 }
 .approach-image img {
     width: 100%;
-    height: 100%; /* ДОБАВЛЕНО: Заставляем фото заполнить контейнер */
-    object-fit: cover; /* ДОБАВЛЕНО: Гарантирует сохранение пропорций фото */
+    height: 100%;
+    object-fit: cover;
     border-radius: 15px;
 }
 .approach-text {
@@ -183,7 +180,6 @@ section {
     margin-bottom: 15px;
 }
 
-/* --- Секция Галереи --- */
 .gallery {
     padding: 100px 0;
     background-color: var(--bg-light);
@@ -198,12 +194,12 @@ section {
 .gallery-item {
     border-radius: 10px;
     overflow: hidden;
-    aspect-ratio: 4 / 5; /* Это правило отлично предотвращает искажение */
+    aspect-ratio: 4 / 5;
 }
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Это правило отлично предотвращает искажение */
+    object-fit: cover;
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 .gallery-item img:hover {
@@ -211,7 +207,6 @@ section {
     filter: brightness(1.1);
 }
 
-/* --- Секция Отзывов --- */
 .testimonials {
     padding: 100px 0;
 }
@@ -237,7 +232,6 @@ section {
     font-style: normal;
 }
 
-/* --- Секция Контактов --- */
 .contact {
     padding: 100px 0;
     background-color: var(--bg-light);
@@ -278,7 +272,6 @@ section {
     align-self: center;
 }
 
-/* --- Футер --- */
 .main-footer {
     padding: 60px 0 20px 0;
     border-top: 1px solid var(--border-color);
@@ -313,14 +306,12 @@ section {
     margin: 0;
 }
 
-
-/* --- Медиа-запросы для адаптивности --- */
 @media (max-width: 900px) {
     .approach-content {
         flex-direction: column;
     }
     .services-grid {
-        grid-template-columns: repeat(2, 1fr); /* ИЗМЕНЕНО: На планшетах 2 колонки */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -329,7 +320,7 @@ section {
     h2 { font-size: 2.2rem; }
 
     .main-header {
-        position: static; /* ИЗМЕНЕНО: Шапка не прилипает, чтобы избежать проблем */
+        position: static;
         background-color: var(--bg-dark);
         padding-top: 20px;
         padding-bottom: 20px;
@@ -339,7 +330,7 @@ section {
         gap: 15px;
     }
     .main-nav {
-        display: none; /* ДОБАВЛЕНО: Скрываем навигацию (нужно бургер-меню) */
+        display: none;
     }
 
     .hero {
@@ -348,7 +339,7 @@ section {
     }
 
     .services-grid {
-        grid-template-columns: 1fr; /* ИЗМЕНЕНО: Теперь услуги в 1 колонку */
+        grid-template-columns: 1fr;
     }
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);

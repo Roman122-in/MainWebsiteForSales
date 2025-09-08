@@ -10,120 +10,145 @@
 
     <style>
         :root {
-     --bg-color: #FFFFFF;
-     --text-color: #36322D;
-     --secondary-text-color: #7A7A7A;
-     --border-color: #DCD9D3;
-     --accent-color: #007BFF;
-     --font-serif: 'Lora', serif;
-     --font-sans: 'Inter', sans-serif;
- }
+            /* ✅ ИЗМЕНЕНО: Цветовая палитра и шрифты с главной страницы */
+            --bg-color: #f0f2f5;
+            --card-bg-color: #ffffff;
+            --text-color: #1a202c;
+            --secondary-text-color: #4a5568;
+            --accent-color: #8c1a25; /* Фирменный красный */
+            --border-color: #e2e8f0;
+            --font-serif: 'Roboto Slab', serif;
+            --font-sans: 'Manrope', sans-serif;
+        }
 
- body {
-     font-family: var(--font-sans);
-     background-color: var(--bg-color);
-     color: var(--text-color);
-     line-height: 1.8;
-     margin: 0;
-     padding: 0;
-     -webkit-font-smoothing: antialiased;
- }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7; /* Улучшена читаемость */
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
 
- .page-container {
-     max-width: 800px;
-     margin: 0 auto;
-     padding: 2rem;
- }
+        .page-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 3rem 4rem; /* Увеличены отступы */
+            background-color: var(--card-bg-color);
+            border-radius: 20px; /* Закругленные углы */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
 
- .page-header {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding-bottom: 1.5rem;
-     margin-bottom: 2rem;
-     border-bottom: 1px solid var(--border-color);
- }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
- .home-btn {
-     display: flex;
-     align-items: center;
-     text-decoration: none;
-     color: var(--text-color);
-     font-weight: 600;
- }
+        .home-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .home-btn:hover {
+            color: var(--accent-color);
+        }
 
- .home-btn svg {
-     width: 24px;
-     height: 24px;
-     margin-right: 8px;
-     fill: currentColor;
- }
+        .home-btn svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            fill: currentColor;
+        }
 
- .home-btn:hover {
-     color: var(--accent-color);
- }
+        .lang-switcher a {
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
 
- .lang-switcher a {
-     font-weight: 600;
-     text-decoration: none;
-     color: var(--secondary-text-color);
-     padding: 5px 8px;
-     margin-left: 5px;
-     border-radius: 4px;
-     transition: background-color 0.2s, color 0.2s;
- }
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+         .lang-switcher a:not(.active):hover {
+            background-color: transparent;
+            border-color: #ccc;
+            color: var(--text-color);
+         }
 
- .lang-switcher a.active,
- .lang-switcher a:hover {
-     background-color: var(--accent-color);
-     color: white;
- }
+        .content h1, .content h2, .content h3 {
+            font-family: var(--font-serif);
+            color: var(--text-color);
+        }
 
- .content h1, .content h2, .content h3 {
-     font-family: var(--font-serif);
-     color: #000;
- }
+        .content h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
 
- .content h1 {
-     font-size: 2.8rem;
-     line-height: 1.2;
-     margin-bottom: 2rem;
-     /* border-bottom: 1px solid var(--border-color);  <-- Эта линия удалена */
-     /* padding-bottom: 1rem; <-- И связанный с ней отступ тоже */
- }
+        .content h2 {
+            font-size: 2rem;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
- .content h2 {
-     font-size: 2rem;
-     margin-top: 3rem;
-     margin-bottom: 1.5rem;
- }
+        .content h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
 
- .content h3 {
-     font-size: 1.3rem;
-     margin-top: 2rem;
-     margin-bottom: 1rem;
- }
+        .content p {
+            font-size: 1.05em;
+            margin-bottom: 1.25rem;
+            color: var(--secondary-text-color);
+        }
 
- .content p {
-     font-size: 1rem;
-     margin-bottom: 1rem;
- }
+        .content p strong {
+            color: var(--text-color);
+        }
 
- .content a {
-     color: var(--accent-color);
- }
+        .content a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
 
- @media (max-width: 600px) {
-     .page-container {
-         padding: 1rem;
-     }
-     .content h1 {
-         font-size: 2rem;
-     }
-     .home-btn span {
-         display: none;
-     }
- }
+        @media (max-width: 600px) {
+            .page-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            .content h1 {
+                font-size: 2rem;
+            }
+            .home-btn span {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>

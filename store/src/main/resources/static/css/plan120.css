@@ -214,7 +214,7 @@ input[type="color"] {
     box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
     transform: translateY(-3px);
 }
-/* --- Стили для полноэкранного режима --- */
+
 .preview-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .preview-header h2 { margin-bottom: 0; }
 #expand-preview-btn { padding: 8px 16px; font-size: 0.9rem; font-weight: 600; background-color: var(--bg-light); color: var(--secondary-color); border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
@@ -237,15 +237,10 @@ input[type="color"] {
 @keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
 @keyframes fill { 100% { box-shadow: inset 0px 0px 0px 50px #4CAF50; } }
 
-/* --- Стили для информационного блока --- */
 .disclaimer-box { display: flex; align-items: center; max-width: 800px; margin: 0 auto 30px auto; padding: 15px 20px; background-color: #e7f3ff; border-left: 5px solid #0d6efd; border-radius: 8px; }
 .disclaimer-box .icon { font-size: 1.5rem; margin-right: 15px; }
 .disclaimer-box p { margin: 0; text-align: left; font-size: 0.9rem; color: #0a58ca; }
 
-
-/* =========================================
-   Адаптация для мобильных устройств
-   ========================================= */
 
 @media (max-width: 768px) {
     body {

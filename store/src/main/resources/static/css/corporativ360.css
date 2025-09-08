@@ -1,7 +1,7 @@
-/* --- Premium Corporate Design --- */
+
 :root {
-    --primary-color: #0D2C4A; /* Глубокий корпоративный синий */
-    --accent-color: #D4A017; /* Насыщенный золотой/янтарный */
+    --primary-color: #0D2C4A;
+    --accent-color: #D4A017;
     --accent-color-hover: #b8860b;
     --background-gray: #F7F8FA;
     --text-dark: #212529;
@@ -17,7 +17,7 @@
     --transition-speed: 0.3s;
 }
 
-/* --- Base Styles --- */
+
 body {
     margin: 0;
     font-family: var(--font-family-body);
@@ -35,7 +35,7 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-/* --- Header --- */
+
 .header {
     background-color: #fff;
     border-bottom: 1px solid var(--border-color);
@@ -64,7 +64,7 @@ h1, h2, h3 {
 }
 .nav a:hover { color: var(--accent-color); }
 
-/* --- Buttons --- */
+
 .btn {
     display: inline-block;
     padding: 0.75rem 1.75rem;
@@ -94,7 +94,6 @@ h1, h2, h3 {
     border-color: var(--primary-color);
 }
 
-/* --- Hero Section --- */
 .hero {
     position: relative;
     color: var(--text-light);
@@ -110,7 +109,6 @@ h1, h2, h3 {
 .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem auto; opacity: 0.9; }
 
-/* --- Social Proof --- */
 .social-proof {
     padding: 1.5rem 0;
     background-color: var(--background-gray);
@@ -201,9 +199,7 @@ h1, h2, h3 {
     .nav, .btn-secondary { display: none; }
     .hero h1 { font-size: 2.2rem; }
 
-    /* === ДОПОЛНЕНИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ === */
 
-    /* Уменьшаем отступы секций */
     .section {
         padding: 3rem 0;
     }

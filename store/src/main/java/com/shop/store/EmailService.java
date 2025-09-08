@@ -16,7 +16,6 @@ public class EmailService {
         this.mailSender = mailSender;
     }
 
-    // --- Метод для отправки письма с контактной формы ---
     public void sendContactEmail(String name, String contactPreference, String contactInfo, String message) {
         StringBuilder emailText = new StringBuilder();
         emailText.append("====== NEUE KONTAKTANFRAGE VON DER WEBSITE ======\n\n");
@@ -42,10 +41,8 @@ public class EmailService {
 
         StringBuilder emailText = new StringBuilder();
         emailText.append("====== NEUE ANFRAGE FÜR WEBSITE (PLAN ").append(planName).append(") ======\n\n");
-        // ... остальной код для формирования письма по планам ...
         emailText.append("ÜBER DEN KUNDEN:\n").append(about).append("\n\n");
         emailText.append("KONTAKT-E-MAIL: ").append(email).append("\n\n");
-        // и т.д.
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();

@@ -1,5 +1,5 @@
 :root {
-    /* Klare, minimalistische Farbpalette */
+
     --primary-color: #20c997; /* Ein sanftes Blaugrün als Akzent */
     --text-color: #212529; /* Dunkelgrau statt hartem Schwarz */
     --text-color-light: #6c757d; /* Helleres Grau für Untertitel */
@@ -7,7 +7,7 @@
     --section-background: #f8f9fa; /* Sehr helles Grau für Abwechslung */
     --border-color: #dee2e6;
 
-    /* Moderne, serifenlose Schriftarten */
+
     --font-family-heading: 'Montserrat', sans-serif;
     --font-family-body: 'Inter', sans-serif;
 
@@ -16,7 +16,7 @@
     --transition-speed: 0.2s;
 }
 
-/* --- Globale Stile --- */
+
 body {
     margin: 0;
     font-family: var(--font-family-body);
@@ -376,15 +376,14 @@ body {
     background-color: #1baa80;
 }
 
-/* Дополнительные правки для мобильных устройств */
 @media (max-width: 768px) {
     .process-grid, .testimonial-grid {
         grid-template-columns: 1fr;
     }
     .cta-text {
-        display: none; /* Скрываем текст на мобильных */
+        display: none;
     }
     .cta-container {
-        justify-content: center; /* Центрируем кнопку */
+        justify-content: center;
     }
 }

@@ -429,7 +429,7 @@ body {
 
 .tech-article-column {
     flex: 1;
-    max-width: 1700px; /* ✅ Ограничение ширины */
+    max-width: 1700px;
     width: 100%;
 }
 
@@ -459,7 +459,7 @@ body {
 }
 
 .article-section::before {
-    counter-increment: article-section-counter; /* ✅ Правильное увеличение счётчика */
+    counter-increment: article-section-counter;
     content: "0" counter(article-section-counter);
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
@@ -641,14 +641,14 @@ blockquote strong {
     background-position: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    /* ✅ ДОБАВЛЕНИЕ СТИЛЕЙ РАМКИ: */
+
     border: 3px solid #ffffff; /* Тонкая белая рамка */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Мягкая тень */
 }
 
 .portfolio-item:hover {
-    transform: translateY(-8px); /* Увеличиваем подъем при наведении */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25); /* Увеличиваем тень при наведении */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
 
@@ -671,7 +671,6 @@ blockquote strong {
 
 .testimonials-grid {
     display: grid;
-    /* Создаем адаптивную сетку: колонки от 350px до 1fr */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
@@ -810,7 +809,7 @@ blockquote strong {
 }
 
 .contact-preference-group input[type="radio"] {
-    /* Прячем стандартную радио-кнопку */
+
     opacity: 0;
     position: fixed;
     width: 0;
@@ -820,14 +819,14 @@ blockquote strong {
     display: inline-block;
     padding: 10px 20px;
     border: 2px solid #e2e8f0;
-    border-radius: 50px; /* Делаем овальными */
+    border-radius: 50px;
     font-size: 0.9em;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: #f8faff;
     color: #4a5568;
-    margin-bottom: 0; /* Убираем лишний отступ у label */
+    margin-bottom: 0;
 }
 
 /* Стиль для ВЫБРАННОЙ кнопки */
@@ -838,7 +837,6 @@ blockquote strong {
     box-shadow: 0 5px 10px rgba(140, 26, 37, 0.2);
 }
 
-/* Стиль при наведении на НЕВЫБРАННУЮ кнопку */
 .contact-preference-group input[type="radio"]:not(:checked) + label:hover {
     border-color: #8c1a25;
     color: #8c1a25;
@@ -849,7 +847,7 @@ blockquote strong {
     padding: 18px 20px;
     border: none;
     border-radius: 8px;
-    background-color: #2d3748; /* Темный цвет для главной кнопки */
+    background-color: #2d3748;
     color: #ffffff;
     font-family: 'Manrope', sans-serif;
     font-size: 1.1em;
@@ -867,16 +865,16 @@ blockquote strong {
 
 /* --- Payment Methods Section --- */
 .payment-methods {
-    padding: 40px 0 60px 0; /* Отступы сверху и снизу */
-    border-top: 1px solid #e2e8f0; /* Тонкая линия-разделитель сверху */
-    margin-top: 60px; /* Отступ от предыдущей секции */
+    padding: 40px 0 60px 0;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 60px;
 }
 
 .payment-title {
     text-align: center;
     font-size: 1em;
     font-weight: 600;
-    color: #6c757d; /* Приглушенный серый цвет */
+    color: #6c757d;
     margin-bottom: 25px;
 }
 
@@ -884,26 +882,20 @@ blockquote strong {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Расстояние между логотипами */
-    flex-wrap: wrap; /* Позволяет переноситься на маленьких экранах */
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .payment-logo-item img {
     height: 25px;
     width: auto;
-    opacity: 1; /* ✅ ИЗМЕНЕНО: Логотипы теперь всегда яркие */
-    transition: transform 0.3s ease; /* Добавим другой эффект при наведении */
+    opacity: 1;
+    transition: transform 0.3s ease;
 }
 
-/* Эффект легкого увеличения при наведении вместо проявления */
 .payment-logo-item img:hover {
     transform: scale(1.05);
 }
-
-
-
-
-
 
 
 
@@ -946,18 +938,20 @@ blockquote strong {
     }
     .swiper-slide {
         flex-direction: column;
-        height: auto; /* Позволяем слайду быть гибким */
+        height: 600px;
+        display: flex;
     }
     .slide-text-content, .slide-image {
         flex-basis: auto;
+        flex-grow: 1;
     }
     .slide-text-content {
         min-width: unset;
         padding: 25px;
         text-align: center;
         border-radius: 15px 15px 0 0;
-        min-height: 200px; /* ✅ Задаем минимальную высоту для текстового блока */
-        display: flex; /* ✅ Добавляем flex для вертикального выравнивания */
+        min-height: unset;
+        display: flex;
         flex-direction: column;
         justify-content: center;
     }
@@ -968,8 +962,9 @@ blockquote strong {
         min-height: 220px;
         border-radius: 0 0 15px 15px;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
+        position: relative;
     }
     .image-overlay-text {
         position: static !important;
@@ -984,10 +979,39 @@ blockquote strong {
         margin-bottom: 20px;
         color: #ffffff !important;
     }
-    .slide-1 .image-overlay-text,
-    .slide-2 .image-overlay-text {
+
+    .slide-1 .image-overlay-text {
+        position: absolute !important;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%) !important;
+        font-size: 1.5em !important;
+        padding: 20px 25px !important;
         background-color: rgba(140, 26, 37, 0.8) !important;
+        margin-bottom: 0;
+        width: auto;
+        max-width: 65% !important;
+        white-space: normal;
+        box-sizing: border-box;
+        right: auto;
     }
+
+    .slide-2 .image-overlay-text {
+        position: absolute !important;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%) !important;
+        font-size: 1.5em !important;
+        padding: 20px 25px !important;
+        background-color: rgba(140, 26, 37, 0.8) !important;
+        margin-bottom: 0;
+        width: auto;
+        max-width: 70% !important;
+        white-space: normal;
+        box-sizing: border-box;
+        right: auto;
+    }
+
     .slide-3 .text-background {
         position: static !important;
         transform: none !important;
@@ -1047,3 +1071,6 @@ blockquote strong {
         height: 20px;
     }
 }
+
+
+
